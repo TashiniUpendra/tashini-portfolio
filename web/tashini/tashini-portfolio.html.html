@@ -41,6 +41,11 @@ nav ul li a{
 text-decoration:none;
 color:white;
 font-size:16px;
+transition:0.3s;
+}
+
+nav ul li a:hover{
+color:#ff6b4a;
 }
 
 .hero{
@@ -74,6 +79,12 @@ padding:12px 25px;
 border:none;
 color:white;
 cursor:pointer;
+border-radius:6px;
+transition:0.3s;
+}
+
+.btn1:hover{
+background:#ff3b16;
 }
 
 .btn2{
@@ -82,12 +93,46 @@ border:2px solid #ff6b4a;
 padding:12px 25px;
 color:white;
 cursor:pointer;
+border-radius:6px;
+transition:0.3s;
+}
+
+.btn2:hover{
+background:#ff6b4a;
+}
+
+/* PROFILE IMAGE */
+
+.hero-img{
+position:relative;
 }
 
 .hero-img img{
 width:320px;
-border-radius:20px;
-box-shadow:0 0 30px rgba(0,0,0,0.6);
+height:320px;
+object-fit:cover;
+border-radius:50%;
+border:6px solid #ff6b4a;
+box-shadow:0 0 40px rgba(255,107,74,0.5);
+animation:float 4s ease-in-out infinite;
+}
+
+/* FLOAT ANIMATION */
+
+@keyframes float{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-15px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
 }
 
 .skills{
@@ -96,10 +141,17 @@ justify-content:center;
 gap:40px;
 padding:30px;
 background:#08131f;
+flex-wrap:wrap;
 }
 
 .skills span{
 opacity:0.7;
+transition:0.3s;
+}
+
+.skills span:hover{
+color:#ff6b4a;
+opacity:1;
 }
 
 section{
@@ -115,6 +167,7 @@ margin-bottom:20px;
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:25px;
+margin-top:30px;
 }
 
 .card{
@@ -133,6 +186,7 @@ footer{
 text-align:center;
 padding:20px;
 background:#08131f;
+margin-top:40px;
 }
 
 </style>
@@ -150,8 +204,7 @@ background:#08131f;
 <li><a href="#">Contact</a></li>
 </ul>
 </nav>
-
-
+  
 <div class="hero">
 
 <div class="hero-text">
@@ -176,8 +229,7 @@ background:#08131f;
 </div>
 
 </div>
-
-
+  
 <div class="skills">
 
 <span>HTML</span>
@@ -188,8 +240,7 @@ background:#08131f;
 <span>GitHub</span>
 
 </div>
-
-
+  
 <section class="about">
 
 <h2>About Me</h2>
@@ -201,8 +252,7 @@ My goal is to become a professional software developer and create useful applica
 </p>
 
 </section>
-
-
+  
 <section>
 
 <h2>Projects</h2>
@@ -211,7 +261,7 @@ My goal is to become a professional software developer and create useful applica
 
 <div class="card">
 <h3>Java OOP Quiz Game</h3>
-<p>GUI based quiz game built using Java Swing and OOP concepts.</p>
+<p>GUI based quiz game built using Java Swing and Object-Oriented Programming concepts.</p>
 </div>
 
 <div class="card">
@@ -228,12 +278,10 @@ My goal is to become a professional software developer and create useful applica
 
 </section>
 
-
 <footer>
 
 <p>© 2026 Tashini Upendra</p>
 
 </footer>
-
 </body>
 </html>
