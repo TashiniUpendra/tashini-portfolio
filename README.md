@@ -230,8 +230,6 @@ margin-top:40px;
 </div>
 
 </div>
-
-
 <div class="skills">
 
 <span>HTML</span>
@@ -255,7 +253,6 @@ My goal is to become a professional software developer and create useful applica
 </p>
 
 </section>
-
 
 <section>
 
