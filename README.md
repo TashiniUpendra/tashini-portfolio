@@ -5,27 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
-}
-
-body{
-background:#0d1b2a;
-color:white;
-}
-
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 10%;
-background:#08131f;
-}
-
 nav h2{
 color:white;
 }
