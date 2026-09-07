@@ -1,287 +1,1355 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tashini Upendra | Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tashini Upendra | Modern Web Developer</title>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-body{
-background:#0d1b2a;
-color:white;
-}
+        body {
+            background: #0d1b2a;
+            color: white;
+            line-height: 1.6;
+        }
 
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 10%;
-background:#08131f;
-}
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background: #08131f;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
 
-nav h2{
-color:white;
-}
+        nav h2 {
+            color: white;
+            font-size: 24px;
+        }
 
-nav ul{
-display:flex;
-list-style:none;
-gap:30px;
-}
+        nav h2 span {
+            color: #ff6b4a;
+        }
 
-nav ul li a{
-text-decoration:none;
-color:white;
-font-size:16px;
-transition:0.3s;
-}
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
 
-nav ul li a:hover{
-color:#ff6b4a;
-}
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            transition: 0.3s;
+        }
 
-.hero{
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:80px 10%;
-}
+        nav ul li a:hover {
+            color: #ff6b4a;
+        }
 
-.hero-text h1{
-font-size:45px;
-margin:10px 0;
-}
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 80px 10%;
+            min-height: 85vh;
+        }
 
-.hero-text span{
-color:#ff6b4a;
-}
+        .hero-text h1 {
+            font-size: 48px;
+            margin: 10px 0;
+        }
 
-.hero-text p{
-margin-bottom:25px;
-}
+        .hero-text span {
+            color: #ff6b4a;
+        }
 
-.buttons{
-display:flex;
-gap:15px;
-}
+        .hero-text p {
+            margin-bottom: 25px;
+            color: #cbd5e1;
+            font-size: 18px;
+        }
 
-.btn1{
-background:#ff6b4a;
-padding:12px 25px;
-border:none;
-color:white;
-cursor:pointer;
-border-radius:6px;
-transition:0.3s;
-}
+        .buttons {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
 
-.btn1:hover{
-background:#ff3b16;
-}
+        .btn1 {
+            background: #ff6b4a;
+            padding: 12px 25px;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.3s;
+            display: inline-block;
+        }
 
-.btn2{
-background:transparent;
-border:2px solid #ff6b4a;
-padding:12px 25px;
-color:white;
-cursor:pointer;
-border-radius:6px;
-transition:0.3s;
-}
+        .btn1:hover {
+            background: #e05536;
+            transform: translateY(-2px);
+        }
 
-.btn2:hover{
-background:#ff6b4a;
-}
+        .btn2 {
+            background: transparent;
+            border: 2px solid #ff6b4a;
+            padding: 12px 25px;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.3s;
+            display: inline-block;
+        }
 
-/* PROFILE IMAGE */
+        .btn2:hover {
+            background: #ff6b4a;
+            transform: translateY(-2px);
+        }
 
-.hero-img{
-position:relative;
-}
+        .socials {
+            display: flex;
+            gap: 20px;
+            font-size: 24px;
+        }
 
-.hero-img img{
-width:320px;
-height:320px;
-object-fit:cover;
-border-radius:50%;
-border:6px solid #ff6b4a;
-box-shadow:0 0 40px rgba(255,107,74,0.5);
-animation:float 4s ease-in-out infinite;
-}
+        .socials a {
+            color: white;
+            transition: 0.3s;
+        }
 
-/* FLOAT ANIMATION */
+        .socials a:hover {
+            color: #ff6b4a;
+            transform: scale(1.2);
+        }
 
-@keyframes float{
+        /* Image Animation Styling */
+        .hero-img {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-0%{
-transform:translateY(0px);
-}
+        .hero-img img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #ff6b4a;
+            image-rendering: -webkit-optimize-contrast;
+            animation: floatImage 4s ease-in-out infinite, glowPulse 3s infinite alternate;
+            transition: transform 0.5s ease;
+        }
 
-50%{
-transform:translateY(-15px);
-}
+        .hero-img img:hover {
+            transform: scale(1.05);
+        }
 
-100%{
-transform:translateY(0px);
-}
+        @keyframes floatImage {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
 
-}
+        @keyframes glowPulse {
+            0% { box-shadow: 0 0 15px rgba(255, 107, 74, 0.4); }
+            100% { box-shadow: 0 0 35px rgba(255, 107, 74, 0.8), 0 0 50px rgba(255, 107, 74, 0.3); }
+        }
 
-.skills{
-display:flex;
-justify-content:center;
-gap:40px;
-padding:30px;
-background:#08131f;
-flex-wrap:wrap;
-}
+        /* Skills Bar */
+        .skills {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 30px 10%;
+            background: #08131f;
+            flex-wrap: wrap;
+        }
 
-.skills span{
-opacity:0.7;
-transition:0.3s;
-}
+        .skills span {
+            background: #1e293b;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 14px;
+            border: 1px solid #334155;
+            color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
 
-.skills span:hover{
-color:#ff6b4a;
-opacity:1;
-}
+        /* Sections General */
+        section {
+            padding: 80px 10%;
+        }
 
-section{
-padding:80px 10%;
-}
+        .section-title {
+            font-size: 35px;
+            margin-bottom: 30px;
+            position: relative;
+        }
 
-.about h2{
-font-size:35px;
-margin-bottom:20px;
-}
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #ff6b4a;
+            margin-top: 8px;
+            border-radius: 2px;
+        }
 
-.projects{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-margin-top:30px;
-}
+        /* Professional About Section Styling */
+        .about-container {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
 
-.card{
-background:#08131f;
-padding:25px;
-border-radius:10px;
-transition:0.3s;
-}
+        .about-text p {
+            color: #cbd5e1;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
 
-.card:hover{
-transform:translateY(-8px);
-box-shadow:0 10px 20px rgba(0,0,0,0.4);
-}
+        .about-text b {
+            color: #ff6b4a;
+        }
 
-footer{
-text-align:center;
-padding:20px;
-background:#08131f;
-margin-top:40px;
-}
+        .about-highlights {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
 
-</style>
+        .highlight-card {
+            background: #08131f;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #1e293b;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            transition: 0.3s;
+        }
+
+        .highlight-card:hover {
+            border-color: #ff6b4a;
+            transform: translateX(5px);
+        }
+
+        .highlight-card i {
+            font-size: 24px;
+            color: #ff6b4a;
+            margin-top: 3px;
+        }
+
+        .highlight-card h4 {
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: #ffffff;
+        }
+
+        .highlight-card p {
+            font-size: 13px;
+            color: #94a3b8;
+            line-height: 1.5;
+        }
+
+        /* Services & Academics */
+        .services-grid, .academic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card, .academic-card {
+            background: #08131f;
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #1e293b;
+            transition: 0.3s;
+        }
+
+        .service-card i, .academic-card i {
+            font-size: 35px;
+            color: #ff6b4a;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3, .academic-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .service-card p, .academic-card p {
+            color: #cbd5e1;
+            font-size: 14px;
+        }
+
+        .service-card:hover, .academic-card:hover {
+            transform: translateY(-8px);
+            border-color: #ff6b4a;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: #08131f;
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #1e293b;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            border-color: #ff6b4a;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #cbd5e1;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            background: rgba(255, 107, 74, 0.15);
+            color: #ff6b4a;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .project-link {
+            color: #ff6b4a;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+            color: #cbd5e1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-info a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .contact-info a:hover {
+            color: #ff6b4a;
+        }
+
+        .contact-info i {
+            color: #ff6b4a;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            padding: 14px;
+            background: #08131f;
+            border: 1px solid #1e293b;
+            color: white;
+            border-radius: 5px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: #ff6b4a;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #08131f;
+            border-top: 1px solid #1e293b;
+            color: #94a3b8;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .buttons, .socials {
+                justify-content: center;
+            }
+
+            nav ul {
+                display: none;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<nav>
-<h2>Tashini</h2>
+    <!-- Header / Navbar -->
+    <nav>
+        <h2>Tashini<span>.dev</span></h2>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#academics">Academics</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-<ul>
-<li><a href="#">Home</a></li>
-<li><a href="#">About</a></li>
-<li><a href="#">Projects</a></li>
-<li><a href="#">Contact</a></li>
-</ul>
-</nav>
-  
-<div class="hero">
+    <!-- Hero Section -->
+    <div class="hero" id="home">
+        <div class="hero-text">
+            <p>Hello, welcome!</p>
+            <h1>I'm <span>Tashini Upendra</span></h1>
+            <h1>Modern Web Developer</h1>
+            <p>Crafting responsive, high-performance web applications and interactive user experiences.</p>
 
-<div class="hero-text">
+            <div class="buttons">
+                <a href="#contact" class="btn1">Got a project?</a>
+                <a href="#" class="btn2" download>My Resume <i class="fa-solid fa-download"></i></a>
+            </div>
 
-<p>Hello.</p>
+            <!-- Social Links -->
+            <div class="socials">
+                <a href="https://github.com/TashiniUpendra" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/tashini-upendra-9b52a9345" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="mailto:tashiniupendra@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
 
-<h1>I'm <span>Tashini</span></h1>
+        <!-- Animated Profile Image -->
+        <div class="hero-img">
+            <img src="profile.jpeg" alt="Tashini Upendra Profile Picture">
+        </div>
+    </div>
 
-<h1>Software Engineering Student</h1>
+    <!-- Tech Skills Bar -->
+    <div class="skills">
+        <span><i class="fa-brands fa-html5"></i> HTML5 & CSS3</span>
+        <span><i class="fa-brands fa-js"></i> JavaScript (ES6+)</span>
+        <span><i class="fa-brands fa-react"></i> React / Web Frameworks</span>
+        <span><i class="fa-brands fa-bootstrap"></i> Responsive UI/UX</span>
+        <span><i class="fa-solid fa-database"></i> SQL & Databases</span>
+        <span><i class="fa-solid fa-globe"></i> REST APIs & Web Architecture</span>
+    </div>
 
-<p>I love building software, websites and learning new technologies.</p>
+    <!-- Professional About Section -->
+    <section class="about" id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-container">
+            <div class="about-text">
+                <p>
+                    I am a passionate <b>Web Developer</b> with a strong foundation in Software Engineering (HND). I specialize in designing and developing modern, interactive, and responsive web applications—leveraging clean code practices, modern <b>Frontend Frameworks</b>, and efficient backend architectures.
+                </p>
+                <p>
+                    With exceptional academic achievements in <b>Modern Web Development (Grade A)</b>, <b>GUI Development (A+)</b>, and <b>Operating Systems (A+)</b>, I turn creative concepts into functional digital web experiences that are both visually engaging and highly accessible.
+                </p>
+            </div>
 
-<div class="buttons">
-<button class="btn1">Got a project?</button>
-<button class="btn2">My Resume</button>
-</div>
+            <!-- Highlights Cards -->
+            <div class="about-highlights">
+                <div class="highlight-card">
+                    <i class="fa-solid fa-code"></i>
+                    <div>
+                        <h4>Frontend Excellence</h4>
+                        <p>A Grade distinction in Modern Web Development with strong UI/UX design capabilities.</p>
+                    </div>
+                </div>
 
-</div>
+                <div class="highlight-card">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                    <div>
+                        <h4>Responsive Design</h4>
+                        <p>Building seamless web applications tailored for mobile, tablet, and desktop viewports.</p>
+                    </div>
+                </div>
 
-<div class="hero-img">
-<img src="https://media.licdn.com/dms/image/v2/D4E03AQE1Vlr5k2QFZw/profile-displayphoto-scale_400_400/B4EZi1_bmiHoAg-/0/1755399962487?e=1774483200&v=beta&t=xxVNeOr6qGEnd9wpieWyihSlAw6AIsXhcr79PGuJDm4">
-</div>
+                <div class="highlight-card">
+                    <i class="fa-solid fa-database"></i>
+                    <div>
+                        <h4>Full-Stack Integration</h4>
+                        <p>Connecting modern web frontends with structured relational databases and web APIs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-</div>
-  
-<div class="skills">
+    <!-- Academic Expertise Section -->
+    <section id="academics">
+        <h2 class="section-title">Academic & Technical Core</h2>
+        <div class="academic-grid">
+            <div class="academic-card">
+                <i class="fa-brands fa-html5"></i>
+                <h3>Modern Web Development</h3>
+                <p>Grade A achievement in modern frontend standards, responsive design, and Client-Side Scripting.</p>
+            </div>
+            <div class="academic-card">
+                <i class="fa-solid fa-desktop"></i>
+                <h3>GUI & Interface Development</h3>
+                <p>A+ Grade distinction in interface layout, design components, and user interaction logic.</p>
+            </div>
+            <div class="academic-card">
+                <i class="fa-solid fa-network-wired"></i>
+                <h3>Web Architecture & Networking</h3>
+                <p>Strong understanding of web hosting, operating systems, and client-server network communications.</p>
+            </div>
+        </div>
+    </section>
 
-<span>HTML</span>
-<span>CSS</span>
-<span>Java</span>
-<span>MySQL</span>
-<span>Git</span>
-<span>GitHub</span>
+    <!-- Services Section -->
+    <section id="services">
+        <h2 class="section-title">My Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fa-solid fa-laptop-code"></i>
+                <h3>Frontend Web Development</h3>
+                <p>Building modern, mobile-responsive, and pixel-perfect websites using clean HTML, CSS, and JavaScript.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-globe"></i>
+                <h3>Full-Stack Web Applications</h3>
+                <p>Developing dynamic web applications integrated with databases and API endpoints.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-palette"></i>
+                <h3>UI/UX & Web Optimization</h3>
+                <p>Optimizing web pages for speed, cross-browser compatibility, and user experience.</p>
+            </div>
+        </div>
+    </section>
 
-</div>
-  
-<section class="about">
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
 
-<h2>About Me</h2>
+            <div class="card">
+                <div>
+                    <h3>Modern Web Application</h3>
+                    <p>Responsive multi-page web app built with dynamic JavaScript features and modern CSS layouts.</p>
+                    <div class="tags">
+                        <span class="tag">HTML/CSS</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Responsive</span>
+                    </div>
+                </div>
+                <a href="https://github.com/TashiniUpendra" class="project-link" target="_blank">View Code <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
 
-<p>
-I am a Software Engineering student passionate about building software solutions.
-I enjoy learning programming, database systems, and modern web technologies.
-My goal is to become a professional software developer and create useful applications.
-</p>
+            <div class="card">
+                <div>
+                    <h3>GUI / Web Interface Solution</h3>
+                    <p>User-friendly application dashboard featuring clean UI components and real-time user inputs.</p>
+                    <div class="tags">
+                        <span class="tag">UI/UX</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">GUI</span>
+                    </div>
+                </div>
+                <a href="https://github.com/TashiniUpendra" class="project-link" target="_blank">View Code <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
 
-</section>
-  
-<section>
+            <div class="card">
+                <div>
+                    <h3>Web Database Integration</h3>
+                    <p>Relational database back-end setup connected with web data structures for smooth CRUD operations.</p>
+                    <div class="tags">
+                        <span class="tag">MySQL</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">Web Backend</span>
+                    </div>
+                </div>
+                <a href="https://github.com/TashiniUpendra" class="project-link" target="_blank">View Code <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
 
-<h2>Projects</h2>
+        </div>
+    </section>
 
-<div class="projects">
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Let's work together!</h3>
+                <p style="margin-top: 15px;">Looking for custom web development services or modern web solutions? Send me a message!</p>
+                <br>
+                <p><i class="fa-solid fa-envelope"></i> <a href="mailto:tashiniupendra@gmail.com">tashiniupendra@gmail.com</a></p>
+                <p><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/tashini-upendra-9b52a9345" target="_blank">LinkedIn Profile</a></p>
+                <p><i class="fa-brands fa-github"></i> <a href="https://github.com/TashiniUpendra" target="_blank">GitHub Profile</a></p>
+                <p><i class="fa-solid fa-location-dot"></i> Sri Lanka</p>
+            </div>
 
-<div class="card">
-<h3>Java OOP Quiz Game</h3>
-<p>GUI based quiz game built using Java Swing and Object-Oriented Programming concepts.</p>
-</div>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn1">Send Message</button>
+            </form>
+        </div>
+    </section>
 
-<div class="card">
-<h3>Hospital Database System</h3>
-<p>Database project with ER diagrams, relational schema and SQL queries.</p>
-</div>
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Tashini Upendra. All rights reserved.</p>
+    </footer>
 
-<div class="card">
-<h3>Smart Classroom System</h3>
-<p>Automation system using sensors to control electricity usage.</p>
-</div>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tashini Upendra | Modern Web Developer</title>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-</div>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-</section>
+        html {
+            scroll-behavior: smooth;
+        }
 
-<footer>
+        body {
+            background: #0d1b2a;
+            color: white;
+            line-height: 1.6;
+        }
 
-<p>© 2026 Tashini Upendra</p>
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background: #08131f;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
 
-</footer>
+        nav h2 {
+            color: white;
+            font-size: 24px;
+        }
+
+        nav h2 span {
+            color: #ff6b4a;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff6b4a;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 80px 10%;
+            min-height: 85vh;
+        }
+
+        .hero-text h1 {
+            font-size: 48px;
+            margin: 10px 0;
+        }
+
+        .hero-text span {
+            color: #ff6b4a;
+        }
+
+        .hero-text p {
+            margin-bottom: 25px;
+            color: #cbd5e1;
+            font-size: 18px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .btn1 {
+            background: #ff6b4a;
+            padding: 12px 25px;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .btn1:hover {
+            background: #e05536;
+            transform: translateY(-2px);
+        }
+
+        .btn2 {
+            background: transparent;
+            border: 2px solid #ff6b4a;
+            padding: 12px 25px;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .btn2:hover {
+            background: #ff6b4a;
+            transform: translateY(-2px);
+        }
+
+        .socials {
+            display: flex;
+            gap: 20px;
+            font-size: 24px;
+        }
+
+        .socials a {
+            color: white;
+            transition: 0.3s;
+        }
+
+        .socials a:hover {
+            color: #ff6b4a;
+            transform: scale(1.2);
+        }
+
+        /* Image Animation Styling */
+        .hero-img {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-img img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #ff6b4a;
+            image-rendering: -webkit-optimize-contrast;
+            animation: floatImage 4s ease-in-out infinite, glowPulse 3s infinite alternate;
+            transition: transform 0.5s ease;
+        }
+
+        .hero-img img:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes floatImage {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes glowPulse {
+            0% { box-shadow: 0 0 15px rgba(255, 107, 74, 0.4); }
+            100% { box-shadow: 0 0 35px rgba(255, 107, 74, 0.8), 0 0 50px rgba(255, 107, 74, 0.3); }
+        }
+
+        /* Skills Bar */
+        .skills {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 30px 10%;
+            background: #08131f;
+            flex-wrap: wrap;
+        }
+
+        .skills span {
+            background: #1e293b;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 14px;
+            border: 1px solid #334155;
+            color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Sections General */
+        section {
+            padding: 80px 10%;
+        }
+
+        .section-title {
+            font-size: 35px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #ff6b4a;
+            margin-top: 8px;
+            border-radius: 2px;
+        }
+
+        /* Professional About Section Styling */
+        .about-container {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: #cbd5e1;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .about-text b {
+            color: #ff6b4a;
+        }
+
+        .about-highlights {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .highlight-card {
+            background: #08131f;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #1e293b;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            transition: 0.3s;
+        }
+
+        .highlight-card:hover {
+            border-color: #ff6b4a;
+            transform: translateX(5px);
+        }
+
+        .highlight-card i {
+            font-size: 24px;
+            color: #ff6b4a;
+            margin-top: 3px;
+        }
+
+        .highlight-card h4 {
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: #ffffff;
+        }
+
+        .highlight-card p {
+            font-size: 13px;
+            color: #94a3b8;
+            line-height: 1.5;
+        }
+
+        /* Services & Academics */
+        .services-grid, .academic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card, .academic-card {
+            background: #08131f;
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #1e293b;
+            transition: 0.3s;
+        }
+
+        .service-card i, .academic-card i {
+            font-size: 35px;
+            color: #ff6b4a;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3, .academic-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .service-card p, .academic-card p {
+            color: #cbd5e1;
+            font-size: 14px;
+        }
+
+        .service-card:hover, .academic-card:hover {
+            transform: translateY(-8px);
+            border-color: #ff6b4a;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: #08131f;
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #1e293b;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            border-color: #ff6b4a;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #cbd5e1;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            background: rgba(255, 107, 74, 0.15);
+            color: #ff6b4a;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .project-link {
+            color: #ff6b4a;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+            color: #cbd5e1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-info a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .contact-info a:hover {
+            color: #ff6b4a;
+        }
+
+        .contact-info i {
+            color: #ff6b4a;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            padding: 14px;
+            background: #08131f;
+            border: 1px solid #1e293b;
+            color: white;
+            border-radius: 5px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: #ff6b4a;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #08131f;
+            border-top: 1px solid #1e293b;
+            color: #94a3b8;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .buttons, .socials {
+                justify-content: center;
+            }
+
+            nav ul {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header / Navbar -->
+    <nav>
+        <h2>Tashini<span>.dev</span></h2>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#academics">Academics</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero" id="home">
+        <div class="hero-text">
+            <p>Hello, welcome!</p>
+            <h1>I'm <span>Tashini Upendra</span></h1>
+            <h1>Modern Web Developer</h1>
+            <p>Crafting responsive, high-performance web applications and interactive user experiences.</p>
+
+            <div class="buttons">
+                <a href="#contact" class="btn1">Got a project?</a>
+                <a href="#" class="btn2" download>My Resume <i class="fa-solid fa-download"></i></a>
+            </div>
+
+            <!-- Social Links -->
+            <div class="socials">
+                <a href="https://github.com/TashiniUpendra" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/tashini-upendra-9b52a9345" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="mailto:tashiniupendra@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+
+        <!-- Animated Profile Image -->
+        <div class="hero-img">
+            <img src="profile.jpeg" alt="Tashini Upendra Profile Picture">
+        </div>
+    </div>
+
+    <!-- Tech Skills Bar -->
+    <div class="skills">
+        <span><i class="fa-brands fa-html5"></i> HTML5 & CSS3</span>
+        <span><i class="fa-brands fa-js"></i> JavaScript (ES6+)</span>
+        <span><i class="fa-brands fa-react"></i> React / Web Frameworks</span>
+        <span><i class="fa-brands fa-bootstrap"></i> Responsive UI/UX</span>
+        <span><i class="fa-solid fa-database"></i> SQL & Databases</span>
+        <span><i class="fa-solid fa-globe"></i> REST APIs & Web Architecture</span>
+    </div>
+
+    <!-- Professional About Section -->
+    <section class="about" id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-container">
+            <div class="about-text">
+                <p>
+                    I am a passionate <b>Web Developer</b> with a strong foundation in Software Engineering (HND). I specialize in designing and developing modern, interactive, and responsive web applications—leveraging clean code practices, modern <b>Frontend Frameworks</b>, and efficient backend architectures.
+                </p>
+                <p>
+                    With exceptional academic achievements in <b>Modern Web Development (Grade A)</b>, <b>GUI Development (A+)</b>, and <b>Operating Systems (A+)</b>, I turn creative concepts into functional digital web experiences that are both visually engaging and highly accessible.
+                </p>
+            </div>
+
+            <!-- Highlights Cards -->
+            <div class="about-highlights">
+                <div class="highlight-card">
+                    <i class="fa-solid fa-code"></i>
+                    <div>
+                        <h4>Frontend Excellence</h4>
+                        <p>A Grade distinction in Modern Web Development with strong UI/UX design capabilities.</p>
+                    </div>
+                </div>
+
+                <div class="highlight-card">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                    <div>
+                        <h4>Responsive Design</h4>
+                        <p>Building seamless web applications tailored for mobile, tablet, and desktop viewports.</p>
+                    </div>
+                </div>
+
+                <div class="highlight-card">
+                    <i class="fa-solid fa-database"></i>
+                    <div>
+                        <h4>Full-Stack Integration</h4>
+                        <p>Connecting modern web frontends with structured relational databases and web APIs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic Expertise Section -->
+    <section id="academics">
+        <h2 class="section-title">Academic & Technical Core</h2>
+        <div class="academic-grid">
+            <div class="academic-card">
+                <i class="fa-brands fa-html5"></i>
+                <h3>Modern Web Development</h3>
+                <p>Grade A achievement in modern frontend standards, responsive design, and Client-Side Scripting.</p>
+            </div>
+            <div class="academic-card">
+                <i class="fa-solid fa-desktop"></i>
+                <h3>GUI & Interface Development</h3>
+                <p>A+ Grade distinction in interface layout, design components, and user interaction logic.</p>
+            </div>
+            <div class="academic-card">
+                <i class="fa-solid fa-network-wired"></i>
+                <h3>Web Architecture & Networking</h3>
+                <p>Strong understanding of web hosting, operating systems, and client-server network communications.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2 class="section-title">My Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fa-solid fa-laptop-code"></i>
+                <h3>Frontend Web Development</h3>
+                <p>Building modern, mobile-responsive, and pixel-perfect websites using clean HTML, CSS, and JavaScript.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-globe"></i>
+                <h3>Full-Stack Web Applications</h3>
+                <p>Developing dynamic web applications integrated with databases and API endpoints.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-palette"></i>
+                <h3>UI/UX & Web Optimization</h3>
+                <p>Optimizing web pages for speed, cross-browser compatibility, and user experience.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+
+            <div class="card">
+                <div>
+                    <h3>Modern Web Application</h3>
+                    <p>Responsive multi-page web app built with dynamic JavaScript features and modern CSS layouts.</p>
+                    <div class="tags">
+                        <span class="tag">HTML/CSS</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Responsive</span>
+                    </div>
+                </div>
+                <a href="https://github.com/TashiniUpendra" class="project-link" target="_blank">View Code <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3>GUI / Web Interface Solution</h3>
+                    <p>User-friendly application dashboard featuring clean UI components and real-time user inputs.</p>
+                    <div class="tags">
+                        <span class="tag">UI/UX</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">GUI</span>
+                    </div>
+                </div>
+                <a href="https://github.com/TashiniUpendra" class="project-link" target="_blank">View Code <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3>Web Database Integration</h3>
+                    <p>Relational database back-end setup connected with web data structures for smooth CRUD operations.</p>
+                    <div class="tags">
+                        <span class="tag">MySQL</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">Web Backend</span>
+                    </div>
+                </div>
+                <a href="https://github.com/TashiniUpendra" class="project-link" target="_blank">View Code <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Let's work together!</h3>
+                <p style="margin-top: 15px;">Looking for custom web development services or modern web solutions? Send me a message!</p>
+                <br>
+                <p><i class="fa-solid fa-envelope"></i> <a href="mailto:tashiniupendra@gmail.com">tashiniupendra@gmail.com</a></p>
+                <p><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/tashini-upendra-9b52a9345" target="_blank">LinkedIn Profile</a></p>
+                <p><i class="fa-brands fa-github"></i> <a href="https://github.com/TashiniUpendra" target="_blank">GitHub Profile</a></p>
+                <p><i class="fa-solid fa-location-dot"></i> Sri Lanka</p>
+            </div>
+
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn1">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Tashini Upendra. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
