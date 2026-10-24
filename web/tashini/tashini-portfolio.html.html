@@ -4,23 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tashini Upendra - Software Engineering Student and Frontend Developer Portfolio">
-    <title>Tashini Upendra | Software Developer</title>
+    <meta name="description" content="Tashini Upendra | Software Engineering Student Portfolio">
+    <title>Tashini Upendra | Portfolio</title>
 
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <style>
         :root {
             --bg: #080b18;
-            --bg-secondary: #0d1225;
-            --card: #121a30;
+            --bg-alt: #0d1225;
+            --card: #151d33;
             --purple: #a78bfa;
             --purple-dark: #7c3aed;
             --cyan: #67e8f9;
             --white: #f8fafc;
-            --muted: #9caac3;
-            --border: rgba(167,139,250,0.16);
+            --muted: #a0acc4;
+            --border: rgba(167,139,250,.18);
         }
 
         * {
@@ -43,17 +42,16 @@
         }
 
         a {
-            text-decoration: none;
             color: inherit;
+            text-decoration: none;
         }
 
         button, input, textarea {
             font: inherit;
         }
 
-        ::selection {
-            background: var(--purple);
-            color: #080b18;
+        button {
+            cursor: pointer;
         }
 
         /* NAVBAR */
@@ -64,17 +62,17 @@
             left: 0;
             width: 100%;
             z-index: 1000;
-            padding: 19px 7%;
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            background: rgba(8,11,24,0.88);
+            align-items: center;
+            padding: 18px 7%;
+            background: rgba(8,11,24,.93);
             backdrop-filter: blur(18px);
             border-bottom: 1px solid var(--border);
         }
 
         .logo {
-            font-size: 26px;
+            font-size: 27px;
             font-weight: 800;
             letter-spacing: -1px;
         }
@@ -85,16 +83,15 @@
 
         .nav-links {
             display: flex;
-            align-items: center;
-            gap: 27px;
+            gap: 22px;
             list-style: none;
+            align-items: center;
         }
 
         .nav-links a {
-            color: #d7ddeb;
-            font-size: 14px;
-            font-weight: 500;
-            transition: color 0.3s;
+            font-size: 13px;
+            color: #d6dcec;
+            transition: color .3s;
         }
 
         .nav-links a:hover,
@@ -104,11 +101,10 @@
 
         .menu-toggle {
             display: none;
-            border: 0;
             background: transparent;
+            border: 0;
             color: white;
-            font-size: 24px;
-            cursor: pointer;
+            font-size: 25px;
         }
 
         /* HERO */
@@ -117,9 +113,9 @@
             min-height: 100vh;
             padding: 135px 7% 90px;
             display: grid;
-            grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.8fr);
+            grid-template-columns: minmax(0,1.3fr) minmax(280px,.8fr);
+            gap: 60px;
             align-items: center;
-            gap: 65px;
             position: relative;
             isolation: isolate;
         }
@@ -127,80 +123,76 @@
         .hero::before {
             content: "";
             position: absolute;
-            width: 440px;
-            height: 440px;
-            right: -100px;
-            top: 10%;
-            background: rgba(124,58,237,0.13);
-            filter: blur(110px);
+            right: -120px;
+            top: 12%;
+            width: 470px;
+            height: 470px;
             border-radius: 50%;
+            background: rgba(124,58,237,.12);
+            filter: blur(100px);
             z-index: -1;
             pointer-events: none;
         }
 
-        .hero-content {
-            min-width: 0;
-        }
-
         .eyebrow {
-            color: var(--cyan);
             font-size: 13px;
             letter-spacing: 3px;
+            color: var(--cyan);
             font-weight: 700;
             margin-bottom: 20px;
         }
 
         .hero-name {
-            font-size: clamp(32px, 3.7vw, 56px);
+            font-size: clamp(32px,3.7vw,56px);
             line-height: 1.25;
+            letter-spacing: -1px;
             font-weight: 800;
-            letter-spacing: -1.5px;
             min-height: 1.5em;
-            margin-bottom: 17px;
+            margin-bottom: 20px;
         }
 
         #nameTyping {
             background: linear-gradient(
                 110deg,
-                #ffffff,
+                #fff,
                 #c4b5fd,
                 #a78bfa,
                 #67e8f9
             );
             background-size: 200% auto;
-            -webkit-background-clip: text;
             background-clip: text;
+            -webkit-background-clip: text;
             color: transparent;
-            animation: nameGradient 6s linear infinite;
+            animation: gradientMove 6s linear infinite;
         }
 
-        @keyframes nameGradient {
+        @keyframes gradientMove {
             to {
                 background-position: 200% center;
             }
         }
 
         .hero-role {
-            font-size: clamp(21px, 2.25vw, 30px);
-            font-weight: 650;
+            font-size: clamp(21px,2.25vw,30px);
             line-height: 1.5;
             min-height: 3.2em;
             margin-bottom: 22px;
         }
 
         #studentTyping {
-            color: var(--white);
+            color: white;
         }
 
         #roleTyping {
             color: var(--purple);
+            font-weight: 800;
         }
 
         .hero-description {
-            max-width: 630px;
             color: var(--muted);
             font-size: 16px;
             line-height: 1.9;
+            max-width: 650px;
         }
 
         .hero-buttons {
@@ -218,39 +210,37 @@
             padding: 13px 25px;
             border: 1px solid transparent;
             border-radius: 10px;
-            background: linear-gradient(120deg, #7c3aed, #a78bfa);
+            background: linear-gradient(120deg,#7c3aed,#a78bfa);
             color: white;
-            font-size: 14px;
             font-weight: 700;
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
+            font-size: 14px;
+            transition: transform .3s, box-shadow .3s;
         }
 
         .btn:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(124,58,237,0.25);
+            box-shadow: 0 12px 30px rgba(124,58,237,.3);
         }
 
         .btn-outline {
             background: transparent;
             border-color: var(--purple);
-            box-shadow: none;
         }
 
         .btn-outline:hover {
-            background: rgba(167,139,250,0.1);
+            background: rgba(167,139,250,.12);
         }
 
         .social-links {
             display: flex;
-            gap: 21px;
-            margin-top: 32px;
+            gap: 23px;
+            margin-top: 33px;
         }
 
         .social-links a {
-            font-size: 22px;
+            font-size: 23px;
             color: #cbd5e1;
-            transition: color 0.3s, transform 0.3s;
+            transition: .3s;
         }
 
         .social-links a:hover {
@@ -258,33 +248,18 @@
             transform: translateY(-5px);
         }
 
-        /* SIMPLE FLOATING PROFILE PHOTO */
+        /* SINGLE CIRCLE FLOATING PHOTO */
 
         .hero-image-area {
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
         }
 
         .profile-wrapper {
-            width: min(100%, 350px);
+            width: min(100%,350px);
             aspect-ratio: 1;
-            position: relative;
             animation: gentleFloat 5s ease-in-out infinite;
-        }
-
-        .profile-wrapper::before {
-            content: "";
-            position: absolute;
-            inset: -18px;
-            border-radius: 50%;
-            background: radial-gradient(
-                circle,
-                rgba(167,139,250,0.17),
-                transparent 70%
-            );
-            filter: blur(20px);
-            z-index: -1;
         }
 
         .profile-photo {
@@ -294,14 +269,16 @@
             object-fit: cover;
             object-position: center;
             border-radius: 50%;
-            border: 5px solid #a78bfa;
-            box-shadow:
-                0 18px 45px rgba(0,0,0,0.28),
-                0 0 35px rgba(167,139,250,0.12);
+
+            /* No extra border */
+            border: none;
+            outline: none;
+
+            box-shadow: 0 15px 40px rgba(0,0,0,.22);
         }
 
         @keyframes gentleFloat {
-            0%, 100% {
+            0%,100% {
                 transform: translateY(0);
             }
 
@@ -313,14 +290,14 @@
         /* SKILLS STRIP */
 
         .skills-strip {
-            background: #0e1528;
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-            padding: 27px 7%;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 12px;
+            padding: 27px 7%;
+            background: #0e1528;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
         }
 
         .skill-pill {
@@ -331,9 +308,9 @@
             background: #19223a;
             border: 1px solid #293450;
             border-radius: 30px;
-            font-size: 13px;
             color: #dbe4f2;
-            transition: transform 0.3s, border-color 0.3s;
+            font-size: 13px;
+            transition: .3s;
         }
 
         .skill-pill i {
@@ -345,14 +322,18 @@
             border-color: var(--purple);
         }
 
-        /* GENERAL SECTIONS */
+        /* COMMON SECTIONS */
 
-        section.content-section {
-            padding: 100px 7%;
+        .content-section {
+            padding: 95px 7%;
+        }
+
+        .alt-section {
+            background: var(--bg-alt);
         }
 
         .section-heading {
-            margin-bottom: 45px;
+            margin-bottom: 42px;
         }
 
         .section-label {
@@ -365,7 +346,7 @@
         }
 
         .section-title {
-            font-size: clamp(29px, 3.5vw, 43px);
+            font-size: clamp(29px,3.5vw,43px);
             letter-spacing: -1px;
             line-height: 1.3;
         }
@@ -375,21 +356,17 @@
         }
 
         .section-description {
-            max-width: 640px;
+            max-width: 680px;
+            margin-top: 14px;
             color: var(--muted);
-            margin-top: 15px;
         }
 
         .section-line {
             width: 65px;
             height: 4px;
             border-radius: 4px;
-            background: linear-gradient(90deg, var(--purple), var(--cyan));
             margin-top: 18px;
-        }
-
-        .alt-section {
-            background: var(--bg-secondary);
+            background: linear-gradient(90deg,var(--purple),var(--cyan));
         }
 
         /* ABOUT */
@@ -398,13 +375,11 @@
             display: grid;
             grid-template-columns: 1.2fr 1fr;
             gap: 45px;
-            align-items: start;
         }
 
         .about-text p {
             color: var(--muted);
             margin-bottom: 20px;
-            font-size: 16px;
         }
 
         .about-text strong {
@@ -415,24 +390,22 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 15px;
-            margin-top: 27px;
         }
 
         .highlight {
-            padding: 20px;
-            border: 1px solid var(--border);
             background: var(--card);
+            border: 1px solid var(--border);
             border-radius: 13px;
+            padding: 20px;
         }
 
         .highlight i {
             font-size: 24px;
             color: var(--purple);
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .highlight h4 {
-            font-size: 15px;
             margin-bottom: 5px;
         }
 
@@ -445,38 +418,35 @@
 
         .card-grid {
             display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-template-columns: repeat(3,minmax(0,1fr));
             gap: 24px;
         }
 
         .card {
-            background: linear-gradient(145deg, #171f37, #101629);
+            background: linear-gradient(145deg,#171f37,#101629);
             border: 1px solid var(--border);
             border-radius: 17px;
-            padding: 29px;
-            transition:
-                transform 0.35s,
-                border-color 0.35s,
-                box-shadow 0.35s;
+            padding: 28px;
+            transition: transform .35s, border-color .35s, box-shadow .35s;
         }
 
         .card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(167,139,250,0.65);
-            box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+            transform: translateY(-7px);
+            border-color: rgba(167,139,250,.65);
+            box-shadow: 0 18px 40px rgba(0,0,0,.18);
         }
 
         .card-icon {
             width: 56px;
             height: 56px;
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             border-radius: 14px;
-            background: rgba(167,139,250,0.12);
+            background: rgba(167,139,250,.12);
             color: var(--purple);
             font-size: 25px;
-            margin-bottom: 22px;
+            margin-bottom: 20px;
         }
 
         .card h3 {
@@ -490,54 +460,272 @@
             line-height: 1.85;
         }
 
+        /* EDUCATION TIMELINE */
+
+        .timeline {
+            position: relative;
+            max-width: 850px;
+            margin: 0 auto;
+            padding-left: 35px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 8px;
+            top: 10px;
+            bottom: 10px;
+            width: 2px;
+            background: linear-gradient(var(--purple),var(--cyan));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 28px;
+            padding: 25px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 15px;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -34px;
+            top: 29px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--purple);
+            box-shadow: 0 0 15px rgba(167,139,250,.5);
+        }
+
+        .timeline-date {
+            display: inline-block;
+            color: var(--cyan);
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .timeline-item h3 {
+            margin-bottom: 7px;
+            font-size: 20px;
+        }
+
+        .timeline-item h4 {
+            color: var(--purple);
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+
+        .timeline-item p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* TECHNICAL SKILLS */
+
+        .technical-grid {
+            display: grid;
+            grid-template-columns: repeat(3,minmax(0,1fr));
+            gap: 24px;
+        }
+
+        .technical-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 26px;
+        }
+
+        .technical-card h3 {
+            color: var(--purple);
+            margin-bottom: 20px;
+            font-size: 19px;
+        }
+
+        .technical-card h3 i {
+            margin-right: 9px;
+        }
+
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tech-list span {
+            padding: 8px 12px;
+            border-radius: 8px;
+            background: #222c46;
+            color: #e4e7f1;
+            font-size: 13px;
+        }
+
         /* PROJECTS */
 
-        .project-top {
+        .project-card {
+            overflow: hidden;
+            padding: 0;
+        }
+
+        .project-image {
+            height: 185px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
+            justify-content: center;
+            flex-direction: column;
+            gap: 12px;
+            background: linear-gradient(135deg,#241640,#12243b);
+            border-bottom: 1px solid var(--border);
+            color: #c4b5fd;
+            text-align: center;
+            padding: 15px;
         }
 
-        .project-top > i {
-            color: var(--purple);
-            font-size: 34px;
+        .project-image i {
+            font-size: 44px;
         }
 
-        .project-number {
-            color: #67738d;
-            font-weight: 700;
-            font-size: 14px;
+        .project-image span {
+            font-size: 13px;
+            color: #c8c2db;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            margin-bottom: 12px;
         }
 
         .project-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-            margin: 22px 0;
+            margin: 20px 0;
         }
 
         .project-tags span {
-            color: #d8c9ff;
-            background: rgba(167,139,250,0.12);
-            border: 1px solid rgba(167,139,250,0.16);
-            border-radius: 30px;
             padding: 5px 11px;
+            border-radius: 20px;
+            color: #ddceff;
+            background: rgba(167,139,250,.12);
+            border: 1px solid rgba(167,139,250,.15);
             font-size: 12px;
         }
 
-        .project-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-            color: var(--purple);
-            font-size: 14px;
-            font-weight: 700;
-            transition: color 0.3s;
+        .project-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
         }
 
-        .project-link:hover {
+        .small-btn {
+            padding: 10px 15px;
+            font-size: 13px;
+            border-radius: 9px;
+            border: 1px solid var(--purple);
+            background: transparent;
+            color: var(--purple);
+            font-weight: 700;
+            transition: .3s;
+        }
+
+        .small-btn:hover {
+            background: rgba(167,139,250,.12);
+        }
+
+        /* PROJECT DETAILS MODAL */
+
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            background: rgba(2,5,15,.85);
+            backdrop-filter: blur(7px);
+            padding: 25px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-content {
+            width: min(100%,650px);
+            max-height: 85vh;
+            overflow-y: auto;
+            background: #141d33;
+            border: 1px solid var(--purple);
+            border-radius: 18px;
+            padding: 32px;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            border: 0;
+            background: transparent;
+            color: white;
+            font-size: 28px;
+        }
+
+        .modal-content h2 {
+            color: var(--purple);
+            margin-bottom: 18px;
+            padding-right: 25px;
+        }
+
+        .modal-content p {
+            color: var(--muted);
+            margin-bottom: 15px;
+        }
+
+        .modal-content ul {
+            padding-left: 22px;
+            color: #d7dceb;
+            margin-bottom: 20px;
+        }
+
+        .modal-content li {
+            margin-bottom: 9px;
+        }
+
+        /* CERTIFICATES */
+
+        .certificate-card {
+            text-align: center;
+        }
+
+        .certificate-card .card-icon {
+            margin: 0 auto 20px;
+        }
+
+        .certificate-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .certificate-card .certificate-status {
+            display: inline-block;
+            margin-top: 18px;
+            font-size: 12px;
             color: var(--cyan);
+            border: 1px solid rgba(103,232,249,.3);
+            padding: 5px 12px;
+            border-radius: 20px;
         }
 
         /* CONTACT */
@@ -550,29 +738,28 @@
 
         .contact-intro {
             color: var(--muted);
-            margin-bottom: 30px;
+            margin-bottom: 28px;
         }
 
         .contact-item {
             display: flex;
+            gap: 15px;
             align-items: flex-start;
-            gap: 16px;
             margin-bottom: 24px;
         }
 
-        .contact-item i {
+        .contact-item > i {
             color: var(--purple);
-            background: rgba(167,139,250,0.12);
-            border-radius: 10px;
+            background: rgba(167,139,250,.12);
             padding: 14px;
             min-width: 46px;
             text-align: center;
+            border-radius: 10px;
         }
 
         .contact-item strong {
             display: block;
             font-size: 14px;
-            margin-bottom: 3px;
         }
 
         .contact-item a,
@@ -594,23 +781,18 @@
 
         .contact-form input,
         .contact-form textarea {
-            width: 100%;
-            padding: 15px 17px;
-            background: #151d33;
-            color: white;
+            background: var(--card);
             border: 1px solid #2a3550;
+            color: white;
+            padding: 15px 17px;
             border-radius: 10px;
+            width: 100%;
             outline: none;
-            transition: border-color 0.3s;
         }
 
         .contact-form input:focus,
         .contact-form textarea:focus {
             border-color: var(--purple);
-        }
-
-        .contact-form textarea {
-            resize: vertical;
         }
 
         .contact-form button {
@@ -620,8 +802,8 @@
         /* FOOTER */
 
         footer {
-            background: #090e1c;
             padding: 28px 7%;
+            background: #090e1c;
             border-top: 1px solid var(--border);
             display: flex;
             justify-content: space-between;
@@ -641,7 +823,7 @@
         .reveal {
             opacity: 0;
             transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
+            transition: opacity .8s, transform .8s;
         }
 
         .reveal.visible {
@@ -657,16 +839,15 @@
             right: 25px;
             width: 46px;
             height: 46px;
+            border: 0;
+            border-radius: 50%;
             background: var(--purple);
             color: #080b18;
-            border: none;
-            border-radius: 50%;
             font-size: 18px;
-            cursor: pointer;
-            z-index: 100;
             opacity: 0;
             visibility: hidden;
-            transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+            z-index: 900;
+            transition: .3s;
         }
 
         .back-to-top.show {
@@ -674,29 +855,32 @@
             visibility: visible;
         }
 
-        .back-to-top:hover {
-            transform: translateY(-4px);
-        }
+        /* RESPONSIVE */
 
-        /* TABLET */
+        @media(max-width:1100px) {
+            .nav-links {
+                gap: 13px;
+            }
 
-        @media (max-width: 1050px) {
+            .nav-links a {
+                font-size: 12px;
+            }
+
             .hero {
                 gap: 35px;
             }
 
             .profile-wrapper {
-                width: min(100%, 290px);
+                width: min(100%,290px);
             }
 
-            .card-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
+            .card-grid,
+            .technical-grid {
+                grid-template-columns: repeat(2,minmax(0,1fr));
             }
         }
 
-        /* MOBILE */
-
-        @media (max-width: 768px) {
+        @media(max-width:768px) {
             .navbar {
                 padding: 17px 6%;
             }
@@ -713,7 +897,7 @@
                 width: 100%;
                 padding: 25px;
                 flex-direction: column;
-                gap: 20px;
+                gap: 18px;
                 background: #10172a;
                 border-bottom: 1px solid var(--border);
             }
@@ -722,11 +906,15 @@
                 display: flex;
             }
 
+            .nav-links a {
+                font-size: 15px;
+            }
+
             .hero {
                 grid-template-columns: 1fr;
                 text-align: center;
-                gap: 45px;
                 padding: 125px 6% 75px;
+                gap: 45px;
             }
 
             .hero-image-area {
@@ -734,16 +922,16 @@
             }
 
             .profile-wrapper {
-                width: min(68vw, 260px);
+                width: min(68vw,260px);
             }
 
             .hero-name {
-                font-size: clamp(30px, 6vw, 43px);
+                font-size: clamp(30px,6vw,43px);
                 min-height: 2.5em;
             }
 
             .hero-role {
-                font-size: clamp(20px, 4.3vw, 26px);
+                font-size: clamp(20px,4.3vw,26px);
             }
 
             .hero-buttons,
@@ -751,7 +939,7 @@
                 justify-content: center;
             }
 
-            section.content-section {
+            .content-section {
                 padding: 75px 6%;
             }
 
@@ -760,7 +948,8 @@
                 grid-template-columns: 1fr;
             }
 
-            .card-grid {
+            .card-grid,
+            .technical-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -770,7 +959,7 @@
             }
         }
 
-        @media (max-width: 420px) {
+        @media(max-width:420px) {
             .about-highlights {
                 grid-template-columns: 1fr;
             }
@@ -778,16 +967,18 @@
             .hero-buttons .btn {
                 width: 100%;
             }
+
+            .modal-content {
+                padding: 24px 20px;
+            }
         }
 
-        /* REDUCED MOTION */
-
-        @media (prefers-reduced-motion: reduce) {
+        @media(prefers-reduced-motion:reduce) {
             *,
             *::before,
             *::after {
-                animation-duration: 0.01ms !important;
-                transition-duration: 0.01ms !important;
+                animation-duration: .01ms !important;
+                transition-duration: .01ms !important;
                 scroll-behavior: auto !important;
             }
 
@@ -801,7 +992,7 @@
 
 <body>
 
-    <!-- NAVIGATION -->
+    <!-- NAVBAR -->
 
     <header class="navbar">
         <a href="#home" class="logo">
@@ -818,9 +1009,12 @@
         <ul class="nav-links" id="navLinks">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#technical-skills">Skills</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#academics">Academics</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#certificates">Certificates</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </header>
@@ -855,6 +1049,7 @@
                 </p>
 
                 <div class="hero-buttons">
+
                     <a href="#contact" class="btn">
                         Got a project?
                         <i class="fa-solid fa-arrow-right"></i>
@@ -866,10 +1061,12 @@
                         My Resume
                         <i class="fa-solid fa-download"></i>
                     </a>
+
                 </div>
 
                 <div class="social-links">
 
+                    <!-- Replace GitHub link if needed -->
                     <a href="https://github.com/TashiniUpendra"
                        target="_blank"
                        rel="noopener noreferrer"
@@ -884,6 +1081,7 @@
                         <i class="fa-brands fa-linkedin"></i>
                     </a>
 
+                    <!-- Replace email with your real email -->
                     <a href="mailto:tashiniupendra@gmail.com"
                        aria-label="Email">
                         <i class="fa-solid fa-envelope"></i>
@@ -892,12 +1090,12 @@
                 </div>
             </div>
 
-            <!-- FLOATING PROFILE PHOTO -->
+            <!-- SINGLE CIRCLE FLOATING PHOTO -->
 
             <div class="hero-image-area">
                 <div class="profile-wrapper">
                     <img src="myphoto.jpeg"
-                         alt="Tashini Upendra profile photo"
+                         alt="Tashini Upendra Profile Photo"
                          class="profile-photo">
                 </div>
             </div>
@@ -956,22 +1154,21 @@
 
                     <p>
                         I am <strong>Tashini Upendra</strong>,
-                        a passionate Higher National Diploma
-                        Software Engineering student with an interest
-                        in modern web development and software design.
+                        a Higher National Diploma Software Engineering
+                        student at the National Institute of Business Management.
                     </p>
 
                     <p>
-                        I enjoy developing responsive user interfaces,
-                        exploring backend technologies, working with
-                        databases, and solving practical problems
-                        through programming.
+                        I enjoy designing responsive websites,
+                        developing software applications,
+                        working with databases, and exploring
+                        modern technologies.
                     </p>
 
                     <p>
-                        My goal is to continuously improve my technical
-                        skills and build meaningful applications that
-                        deliver excellent user experiences.
+                        My goal is to continue improving my
+                        technical skills and create useful,
+                        user-friendly software solutions.
                     </p>
 
                     <a href="#projects" class="btn">
@@ -986,7 +1183,7 @@
                     <div class="highlight">
                         <i class="fa-solid fa-code"></i>
                         <h4>Frontend</h4>
-                        <p>Responsive web interfaces</p>
+                        <p>Responsive interfaces</p>
                     </div>
 
                     <div class="highlight">
@@ -998,16 +1195,181 @@
                     <div class="highlight">
                         <i class="fa-solid fa-laptop-code"></i>
                         <h4>Programming</h4>
-                        <p>Java and OOP concepts</p>
+                        <p>Java and OOP</p>
                     </div>
 
                     <div class="highlight">
                         <i class="fa-solid fa-lightbulb"></i>
                         <h4>Problem Solving</h4>
-                        <p>Creative software solutions</p>
+                        <p>Software solutions</p>
                     </div>
 
                 </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION TIMELINE -->
+
+        <section class="content-section alt-section reveal" id="education">
+
+            <div class="section-heading">
+                <p class="section-label">My learning journey</p>
+
+                <h2 class="section-title">
+                    Education <span>Timeline</span>
+                </h2>
+
+                <div class="section-line"></div>
+            </div>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <span class="timeline-date">
+                        [Add Start Year] – Present
+                    </span>
+
+                    <h3>
+                        Higher National Diploma in Software Engineering
+                    </h3>
+
+                    <h4>
+                        National Institute of Business Management (NIBM)
+                    </h4>
+
+                    <p>
+                        Studying software development, database systems,
+                        programming, web technologies, and software design.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="timeline-date">
+                        [Add Year]
+                    </span>
+
+                    <h3>
+                        [Add Previous Qualification]
+                    </h3>
+
+                    <h4>
+                        [Add School or Institution]
+                    </h4>
+
+                    <p>
+                        Replace this placeholder with your previous
+                        education details.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- TECHNICAL SKILLS -->
+
+        <section class="content-section reveal" id="technical-skills">
+
+            <div class="section-heading">
+                <p class="section-label">Tools and technologies</p>
+
+                <h2 class="section-title">
+                    Technical <span>Skills</span>
+                </h2>
+
+                <p class="section-description">
+                    Technologies I have studied or used in academic projects.
+                </p>
+
+                <div class="section-line"></div>
+            </div>
+
+            <div class="technical-grid">
+
+                <div class="technical-card">
+                    <h3>
+                        <i class="fa-solid fa-code"></i>
+                        Frontend
+                    </h3>
+
+                    <div class="tech-list">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                        <span>Responsive Design</span>
+                        <span>jQuery</span>
+                    </div>
+                </div>
+
+                <div class="technical-card">
+                    <h3>
+                        <i class="fa-solid fa-laptop-code"></i>
+                        Programming
+                    </h3>
+
+                    <div class="tech-list">
+                        <span>Java</span>
+                        <span>Kotlin</span>
+                        <span>PHP</span>
+                        <span>OOP</span>
+                        <span>PL/SQL</span>
+                    </div>
+                </div>
+
+                <div class="technical-card">
+                    <h3>
+                        <i class="fa-solid fa-database"></i>
+                        Databases
+                    </h3>
+
+                    <div class="tech-list">
+                        <span>MySQL</span>
+                        <span>Oracle Database</span>
+                        <span>MongoDB</span>
+                        <span>SQL</span>
+                    </div>
+                </div>
+
+                <div class="technical-card">
+                    <h3>
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                        Development Tools
+                    </h3>
+
+                    <div class="tech-list">
+                        <span>VS Code</span>
+                        <span>Android Studio</span>
+                        <span>MySQL Workbench</span>
+                        <span>Git</span>
+                    </div>
+                </div>
+
+                <div class="technical-card">
+                    <h3>
+                        <i class="fa-solid fa-diagram-project"></i>
+                        Software Design
+                    </h3>
+
+                    <div class="tech-list">
+                        <span>UML</span>
+                        <span>Database Design</span>
+                        <span>REST APIs</span>
+                        <span>CRUD Operations</span>
+                    </div>
+                </div>
+
+                <div class="technical-card">
+                    <h3>
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        Currently Learning
+                    </h3>
+
+                    <div class="tech-list">
+                        <span>[Add Technology]</span>
+                        <span>[Add Framework]</span>
+                        <span>[Add Tool]</span>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -1022,10 +1384,6 @@
                     My <span>Services</span>
                 </h2>
 
-                <p class="section-description">
-                    My technical interests and areas of development.
-                </p>
-
                 <div class="section-line"></div>
             </div>
 
@@ -1039,9 +1397,8 @@
                     <h3>Frontend Web Development</h3>
 
                     <p>
-                        Building responsive and visually appealing
-                        websites using HTML, CSS and JavaScript,
-                        with a focus on usability and clean design.
+                        Responsive websites using HTML, CSS,
+                        JavaScript, and modern user interface techniques.
                     </p>
                 </article>
 
@@ -1053,9 +1410,8 @@
                     <h3>Application Development</h3>
 
                     <p>
-                        Developing structured software applications
-                        using programming fundamentals and
-                        Object-Oriented Programming concepts.
+                        Building and exploring structured applications
+                        using programming and Object-Oriented concepts.
                     </p>
                 </article>
 
@@ -1067,9 +1423,8 @@
                     <h3>Database Integration</h3>
 
                     <p>
-                        Working with relational databases,
-                        SQL queries and CRUD functionality
-                        to support data-driven applications.
+                        Designing databases and implementing
+                        data storage and CRUD functionality.
                     </p>
                 </article>
 
@@ -1081,7 +1436,7 @@
         <section class="content-section reveal" id="academics">
 
             <div class="section-heading">
-                <p class="section-label">Knowledge and learning</p>
+                <p class="section-label">Academic knowledge</p>
 
                 <h2 class="section-title">
                     Academic & <span>Technical Core</span>
@@ -1100,8 +1455,8 @@
                     <h3>Modern Web Development</h3>
 
                     <p>
-                        HTML, CSS, JavaScript, responsive layouts,
-                        user interfaces and modern web design principles.
+                        HTML, CSS, JavaScript, web interfaces,
+                        and responsive website design.
                     </p>
                 </article>
 
@@ -1113,8 +1468,8 @@
                     <h3>GUI Development</h3>
 
                     <p>
-                        Creating user-friendly graphical interfaces
-                        and exploring effective interaction design.
+                        Creating user-friendly interfaces
+                        for software and mobile applications.
                     </p>
                 </article>
 
@@ -1126,28 +1481,28 @@
                     <h3>Object-Oriented Programming</h3>
 
                     <p>
-                        Java programming, encapsulation, inheritance,
-                        polymorphism and structured application design.
+                        Java, classes, inheritance, encapsulation,
+                        polymorphism, and structured application design.
                     </p>
                 </article>
 
             </div>
         </section>
 
-        <!-- PROJECTS -->
+        <!-- REAL PROJECTS GALLERY -->
 
         <section class="content-section alt-section reveal" id="projects">
 
             <div class="section-heading">
-                <p class="section-label">Selected work</p>
+                <p class="section-label">Academic and development work</p>
 
                 <h2 class="section-title">
                     Featured <span>Projects</span>
                 </h2>
 
                 <p class="section-description">
-                    Examples of software development project categories.
-                    Replace these sample descriptions with your completed projects.
+                    Projects I have worked on during my studies.
+                    Screenshots and repository links can be added below.
                 </p>
 
                 <div class="section-line"></div>
@@ -1155,97 +1510,191 @@
 
             <div class="card-grid">
 
-                <article class="card">
+                <!-- PROJECT 1 -->
 
-                    <div class="project-top">
+                <article class="card project-card">
+
+                    <div class="project-image">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                        <span>[Add MumCare App Screenshot]</span>
+                    </div>
+
+                    <div class="project-content">
+
+                        <h3>MumCare Android Application</h3>
+
+                        <p>
+                            An Android application project
+                            focused on maternal and baby care.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>Kotlin</span>
+                            <span>Android Studio</span>
+                            <span>Mobile App</span>
+                        </div>
+
+                        <div class="project-actions">
+                            <button class="small-btn"
+                                    type="button"
+                                    data-project="mumcare">
+                                View Details
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                </article>
+
+                <!-- PROJECT 2 -->
+
+                <article class="card project-card">
+
+                    <div class="project-image">
+                        <i class="fa-solid fa-bus"></i>
+                        <span>[Add SmartMove Screenshot]</span>
+                    </div>
+
+                    <div class="project-content">
+
+                        <h3>SmartMove Transport Solutions</h3>
+
+                        <p>
+                            A transport management database
+                            and application development project.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>Oracle</span>
+                            <span>PL/SQL</span>
+                            <span>MongoDB</span>
+                        </div>
+
+                        <div class="project-actions">
+                            <button class="small-btn"
+                                    type="button"
+                                    data-project="smartmove">
+                                View Details
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                </article>
+
+                <!-- PROJECT 3 -->
+
+                <article class="card project-card">
+
+                    <div class="project-image">
                         <i class="fa-solid fa-book-open"></i>
-                        <span class="project-number">01</span>
+                        <span>[Add Journal App Screenshot]</span>
                     </div>
 
-                    <h3>Java Library Management System</h3>
+                    <div class="project-content">
 
-                    <p>
-                        A sample Java-based library management
-                        application concept for organizing
-                        books and related records.
-                    </p>
+                        <h3>Personal Journal Web App</h3>
 
-                    <div class="project-tags">
-                        <span>Java</span>
-                        <span>OOP</span>
-                        <span>Data Structures</span>
+                        <p>
+                            A journal web application project
+                            with user accounts, journal entries,
+                            and personal goals.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                            <span>HTML & CSS</span>
+                        </div>
+
+                        <div class="project-actions">
+                            <button class="small-btn"
+                                    type="button"
+                                    data-project="journal">
+                                View Details
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+
                     </div>
-
-                    <a href="https://github.com/TashiniUpendra"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="project-link">
-                        Explore GitHub
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </a>
-
                 </article>
 
-                <article class="card">
+            </div>
+        </section>
 
-                    <div class="project-top">
-                        <i class="fa-solid fa-globe"></i>
-                        <span class="project-number">02</span>
+        <!-- CERTIFICATES -->
+
+        <section class="content-section reveal" id="certificates">
+
+            <div class="section-heading">
+                <p class="section-label">Learning milestones</p>
+
+                <h2 class="section-title">
+                    Certificates & <span>Achievements</span>
+                </h2>
+
+                <p class="section-description">
+                    Add verified certificates and achievements here.
+                    The cards below are placeholders.
+                </p>
+
+                <div class="section-line"></div>
+            </div>
+
+            <div class="card-grid">
+
+                <article class="card certificate-card">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-certificate"></i>
                     </div>
 
-                    <h3>Modern Web Application</h3>
+                    <h3>[Certificate Name 01]</h3>
 
                     <p>
-                        A sample responsive website project
-                        demonstrating clean layouts,
-                        interactive features and modern styling.
+                        [Issuing Organization]
+                        <br>
+                        [Year]
                     </p>
 
-                    <div class="project-tags">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                    </div>
-
-                    <a href="https://github.com/TashiniUpendra"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="project-link">
-                        Explore GitHub
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </a>
-
+                    <span class="certificate-status">
+                        Add Certificate
+                    </span>
                 </article>
 
-                <article class="card">
-
-                    <div class="project-top">
-                        <i class="fa-solid fa-database"></i>
-                        <span class="project-number">03</span>
+                <article class="card certificate-card">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-award"></i>
                     </div>
 
-                    <h3>Database CRUD Solution</h3>
+                    <h3>[Academic Achievement]</h3>
 
                     <p>
-                        A sample database-backed application
-                        concept featuring create, read,
-                        update and delete operations.
+                        [Achievement Description]
+                        <br>
+                        [Year]
                     </p>
 
-                    <div class="project-tags">
-                        <span>SQL</span>
-                        <span>MySQL</span>
-                        <span>Backend</span>
+                    <span class="certificate-status">
+                        Add Achievement
+                    </span>
+                </article>
+
+                <article class="card certificate-card">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-medal"></i>
                     </div>
 
-                    <a href="https://github.com/TashiniUpendra"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="project-link">
-                        Explore GitHub
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </a>
+                    <h3>[Certificate Name 02]</h3>
 
+                    <p>
+                        [Issuing Organization]
+                        <br>
+                        [Year]
+                    </p>
+
+                    <span class="certificate-status">
+                        Add Certificate
+                    </span>
                 </article>
 
             </div>
@@ -1253,7 +1702,7 @@
 
         <!-- CONTACT -->
 
-        <section class="content-section reveal" id="contact">
+        <section class="content-section alt-section reveal" id="contact">
 
             <div class="section-heading">
                 <p class="section-label">Let's connect</p>
@@ -1261,11 +1710,6 @@
                 <h2 class="section-title">
                     Get In <span>Touch</span>
                 </h2>
-
-                <p class="section-description">
-                    Interested in connecting or discussing a project?
-                    Feel free to reach out.
-                </p>
 
                 <div class="section-line"></div>
             </div>
@@ -1275,9 +1719,9 @@
                 <div>
 
                     <p class="contact-intro">
-                        I'm interested in learning opportunities,
-                        software development projects and
-                        collaborating on creative ideas.
+                        Interested in connecting, collaborating,
+                        or discussing a project?
+                        Feel free to contact me.
                     </p>
 
                     <div class="contact-item">
@@ -1330,23 +1774,20 @@
 
                 <form class="contact-form" id="contactForm">
 
-                    <input
-                        type="text"
-                        id="contactName"
-                        placeholder="Your Name"
-                        required>
+                    <input type="text"
+                           id="contactName"
+                           placeholder="Your Name"
+                           required>
 
-                    <input
-                        type="email"
-                        id="contactEmail"
-                        placeholder="Your Email"
-                        required>
+                    <input type="email"
+                           id="contactEmail"
+                           placeholder="Your Email"
+                           required>
 
-                    <textarea
-                        id="contactMessage"
-                        rows="6"
-                        placeholder="Your Message"
-                        required></textarea>
+                    <textarea id="contactMessage"
+                              rows="6"
+                              placeholder="Your Message"
+                              required></textarea>
 
                     <button type="submit" class="btn">
                         Send Message
@@ -1359,6 +1800,30 @@
         </section>
 
     </main>
+
+    <!-- PROJECT DETAILS MODAL -->
+
+    <div class="modal"
+         id="projectModal"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="modalTitle"
+         aria-hidden="true">
+
+        <div class="modal-content">
+
+            <button class="modal-close"
+                    id="modalClose"
+                    aria-label="Close project details">
+                &times;
+            </button>
+
+            <h2 id="modalTitle"></h2>
+
+            <div id="modalBody"></div>
+
+        </div>
+    </div>
 
     <!-- FOOTER -->
 
@@ -1384,14 +1849,14 @@
 
     <script>
 
-        /* MOBILE NAVIGATION */
+        /* MOBILE MENU */
 
         const menuToggle = document.getElementById("menuToggle");
         const navLinks = document.getElementById("navLinks");
 
         menuToggle.addEventListener("click", () => {
-            const isOpen = navLinks.classList.toggle("open");
-            menuToggle.setAttribute("aria-expanded", String(isOpen));
+            const open = navLinks.classList.toggle("open");
+            menuToggle.setAttribute("aria-expanded", String(open));
         });
 
         document.querySelectorAll(".nav-links a").forEach(link => {
@@ -1415,14 +1880,14 @@
             "Frontend Developer"
         ];
 
-        const sleep = milliseconds =>
-            new Promise(resolve => setTimeout(resolve, milliseconds));
+        const sleep = ms =>
+            new Promise(resolve => setTimeout(resolve, ms));
 
         async function typeText(element, text, speed) {
             element.textContent = "";
 
-            for (const letter of text) {
-                element.textContent += letter;
+            for (const char of text) {
+                element.textContent += char;
                 await sleep(speed);
             }
         }
@@ -1434,7 +1899,7 @@
             }
         }
 
-        async function runTyping() {
+        async function startTyping() {
             const reducedMotion = window.matchMedia(
                 "(prefers-reduced-motion: reduce)"
             ).matches;
@@ -1464,7 +1929,172 @@
             }
         }
 
-        runTyping();
+        startTyping();
+
+        /* PROJECT DETAILS DATA */
+
+        const projectDetails = {
+            mumcare: {
+                title: "MumCare Android Application",
+                description:
+                    "MumCare is an Android application project focused on maternal and baby care. It is being developed as part of software engineering coursework.",
+                technologies: [
+                    "Kotlin",
+                    "Android Studio",
+                    "Android UI Design"
+                ],
+                features: [
+                    "Android application interface development",
+                    "Maternal and baby care related screens",
+                    "Team-based development",
+                    "[Add your completed features here]"
+                ]
+            },
+
+            smartmove: {
+                title: "SmartMove Transport Solutions",
+                description:
+                    "SmartMove is a transport management project involving database design, Oracle PL/SQL, MongoDB and web application components.",
+                technologies: [
+                    "Oracle Database",
+                    "PL/SQL",
+                    "MongoDB",
+                    "Web Technologies"
+                ],
+                features: [
+                    "Passenger and vehicle data management",
+                    "Driver, route and trip data structures",
+                    "Ticket and payment related database entities",
+                    "PL/SQL procedures and queries"
+                ]
+            },
+
+            journal: {
+                title: "Personal Journal Web Application",
+                description:
+                    "A web application project for managing personal journal entries and goals using PHP and MySQL.",
+                technologies: [
+                    "PHP",
+                    "MySQL",
+                    "HTML",
+                    "CSS",
+                    "JavaScript"
+                ],
+                features: [
+                    "User login and session management",
+                    "Add, edit and manage journal entries",
+                    "Mood selection for entries",
+                    "Personal goals management",
+                    "Dashboard interface"
+                ]
+            }
+        };
+
+        /* PROJECT MODAL */
+
+        const modal = document.getElementById("projectModal");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalBody = document.getElementById("modalBody");
+        const modalClose = document.getElementById("modalClose");
+
+        let lastFocusedElement = null;
+
+        function createList(items) {
+            const ul = document.createElement("ul");
+
+            items.forEach(item => {
+                const li = document.createElement("li");
+                li.textContent = item;
+                ul.appendChild(li);
+            });
+
+            return ul;
+        }
+
+        function openProject(projectId) {
+            const project = projectDetails[projectId];
+
+            if (!project) return;
+
+            lastFocusedElement = document.activeElement;
+
+            modalTitle.textContent = project.title;
+            modalBody.replaceChildren();
+
+            const description = document.createElement("p");
+            description.textContent = project.description;
+
+            const techHeading = document.createElement("h3");
+            techHeading.textContent = "Technologies Used";
+            techHeading.style.marginBottom = "12px";
+
+            const featureHeading = document.createElement("h3");
+            featureHeading.textContent = "Project Features";
+            featureHeading.style.marginBottom = "12px";
+
+            modalBody.appendChild(description);
+            modalBody.appendChild(techHeading);
+            modalBody.appendChild(createList(project.technologies));
+            modalBody.appendChild(featureHeading);
+            modalBody.appendChild(createList(project.features));
+
+            modal.classList.add("show");
+            modal.setAttribute("aria-hidden", "false");
+            document.body.style.overflow = "hidden";
+
+            modalClose.focus();
+        }
+
+        function closeProject() {
+            modal.classList.remove("show");
+            modal.setAttribute("aria-hidden", "true");
+            document.body.style.overflow = "";
+
+            if (lastFocusedElement) {
+                lastFocusedElement.focus();
+            }
+        }
+
+        document.querySelectorAll("[data-project]").forEach(button => {
+            button.addEventListener("click", () => {
+                openProject(button.dataset.project);
+            });
+        });
+
+        modalClose.addEventListener("click", closeProject);
+
+        modal.addEventListener("click", event => {
+            if (event.target === modal) {
+                closeProject();
+            }
+        });
+
+        document.addEventListener("keydown", event => {
+            if (!modal.classList.contains("show")) return;
+
+            if (event.key === "Escape") {
+                closeProject();
+            }
+
+            if (event.key === "Tab") {
+                const focusable = modal.querySelectorAll(
+                    "button, a[href], input, textarea, [tabindex]:not([tabindex='-1'])"
+                );
+
+                if (focusable.length === 0) return;
+
+                const first = focusable[0];
+                const last = focusable[focusable.length - 1];
+
+                if (event.shiftKey && document.activeElement === first) {
+                    event.preventDefault();
+                    last.focus();
+                } else if (!event.shiftKey && document.activeElement === last) {
+                    event.preventDefault();
+                    first.focus();
+                }
+            }
+        });
 
         /* SCROLL REVEAL */
 
@@ -1538,7 +2168,7 @@
         /* CONTACT FORM */
 
         document.getElementById("contactForm")
-            .addEventListener("submit", function(event) {
+            .addEventListener("submit", event => {
 
                 event.preventDefault();
 
@@ -1571,6 +2201,5 @@
             });
 
     </script>
-
 </body>
 </html>
