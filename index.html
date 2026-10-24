@@ -1,0 +1,2597 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portfolio of Tashini Upendra, Software Engineering Student">
+<title>Tashini Upendra | Software Engineering Portfolio</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+:root {
+    --bg: #080b18;
+    --bg2: #0d1225;
+    --card: #151d33;
+    --purple: #a78bfa;
+    --purple2: #7c3aed;
+    --cyan: #67e8f9;
+    --white: #f8fafc;
+    --muted: #a4aec4;
+    --border: rgba(167,139,250,.18);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--white);
+    line-height: 1.75;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button, input, textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+:focus-visible {
+    outline: 2px solid var(--cyan);
+    outline-offset: 3px;
+}
+
+/* NAVIGATION */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 17px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(8,11,24,.94);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--purple);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 13px;
+    color: #d7dcec;
+    transition: color .3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--purple);
+}
+
+.menu-toggle {
+    display: none;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 25px;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: minmax(0,1.3fr) minmax(280px,.8fr);
+    align-items: center;
+    gap: 60px;
+    padding: 135px 7% 90px;
+    position: relative;
+    isolation: isolate;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    right: -100px;
+    top: 10%;
+    width: 460px;
+    height: 460px;
+    border-radius: 50%;
+    background: rgba(124,58,237,.14);
+    filter: blur(110px);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.eyebrow {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--cyan);
+    margin-bottom: 20px;
+}
+
+.hero-name {
+    font-size: clamp(32px,3.7vw,56px);
+    line-height: 1.25;
+    letter-spacing: -1px;
+    min-height: 1.5em;
+    margin-bottom: 18px;
+}
+
+#nameTyping {
+    background: linear-gradient(
+        110deg,
+        #fff,
+        #c4b5fd,
+        #a78bfa,
+        #67e8f9
+    );
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradientText 6s linear infinite;
+}
+
+@keyframes gradientText {
+    to {
+        background-position: 200% center;
+    }
+}
+
+.hero-role {
+    font-size: clamp(21px,2.3vw,30px);
+    min-height: 3.2em;
+    line-height: 1.5;
+    margin-bottom: 22px;
+}
+
+#roleTyping {
+    color: var(--purple);
+    font-weight: 800;
+}
+
+.hero-description {
+    max-width: 640px;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 32px;
+}
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 24px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background: linear-gradient(120deg,var(--purple2),var(--purple));
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    transition: transform .3s, box-shadow .3s;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(124,58,237,.3);
+}
+
+.btn-outline {
+    background: transparent;
+    border-color: var(--purple);
+}
+
+.btn-outline:hover {
+    background: rgba(167,139,250,.12);
+}
+
+.social-links {
+    display: flex;
+    gap: 23px;
+    margin-top: 32px;
+}
+
+.social-links a {
+    font-size: 23px;
+    color: #cbd5e1;
+    transition: .3s;
+}
+
+.social-links a:hover {
+    color: var(--purple);
+    transform: translateY(-5px);
+}
+
+/* SINGLE-CIRCLE FLOATING PHOTO */
+
+.hero-image-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-wrapper {
+    width: min(100%,350px);
+    aspect-ratio: 1;
+    animation: gentleFloat 5s ease-in-out infinite;
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    box-shadow: 0 15px 40px rgba(0,0,0,.22);
+}
+
+@keyframes gentleFloat {
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-14px);
+    }
+}
+
+/* SKILLS STRIP */
+
+.skills-strip {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    padding: 27px 7%;
+    background: #0e1528;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.skill-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 16px;
+    background: #19223a;
+    border: 1px solid #293450;
+    border-radius: 30px;
+    font-size: 13px;
+    color: #dbe4f2;
+    transition: .3s;
+}
+
+.skill-pill i {
+    color: var(--purple);
+}
+
+.skill-pill:hover {
+    transform: translateY(-4px);
+    border-color: var(--purple);
+}
+
+/* SECTIONS */
+
+.content-section {
+    padding: 95px 7%;
+}
+
+.alt-section {
+    background: var(--bg2);
+}
+
+.section-heading {
+    margin-bottom: 43px;
+}
+
+.section-label {
+    color: var(--cyan);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.section-title {
+    font-size: clamp(29px,3.5vw,43px);
+    line-height: 1.3;
+    letter-spacing: -1px;
+}
+
+.section-title span {
+    color: var(--purple);
+}
+
+.section-description {
+    max-width: 700px;
+    color: var(--muted);
+    margin-top: 14px;
+}
+
+.section-line {
+    width: 65px;
+    height: 4px;
+    margin-top: 18px;
+    border-radius: 4px;
+    background: linear-gradient(90deg,var(--purple),var(--cyan));
+}
+
+/* ABOUT */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 45px;
+    align-items: start;
+}
+
+.about-text p {
+    color: var(--muted);
+    margin-bottom: 20px;
+}
+
+.about-text strong {
+    color: var(--purple);
+}
+
+.about-highlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.highlight {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    padding: 20px;
+}
+
+.highlight i {
+    color: var(--purple);
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.highlight h4 {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.highlight p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* CARDS */
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3,minmax(0,1fr));
+    gap: 24px;
+}
+
+.card {
+    background: linear-gradient(145deg,#171f37,#101629);
+    border: 1px solid var(--border);
+    border-radius: 17px;
+    padding: 28px;
+    transition: transform .35s, border-color .35s, box-shadow .35s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(167,139,250,.65);
+    box-shadow: 0 18px 40px rgba(0,0,0,.18);
+}
+
+.card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: rgba(167,139,250,.12);
+    color: var(--purple);
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-size: 19px;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+/* EDUCATION TIMELINE */
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-left: 35px;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: 8px;
+    width: 2px;
+    background: linear-gradient(var(--purple),var(--cyan));
+}
+
+.timeline-item {
+    position: relative;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 25px;
+    transition: transform .3s;
+}
+
+.timeline-item:hover {
+    transform: translateX(5px);
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -34px;
+    top: 29px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--purple);
+    box-shadow: 0 0 15px rgba(167,139,250,.5);
+}
+
+.timeline-date {
+    color: var(--cyan);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.timeline-item h3 {
+    font-size: 19px;
+    margin: 8px 0;
+}
+
+.timeline-item h4 {
+    color: var(--purple);
+    font-size: 14px;
+    margin-bottom: 9px;
+}
+
+.timeline-item p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.status {
+    display: inline-block;
+    padding: 4px 11px;
+    border-radius: 20px;
+    margin-top: 12px;
+    font-size: 12px;
+    background: rgba(167,139,250,.12);
+    color: #d8c7ff;
+}
+
+/* TECHNICAL SKILLS */
+
+.technical-grid {
+    display: grid;
+    grid-template-columns: repeat(3,minmax(0,1fr));
+    gap: 24px;
+}
+
+.technical-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 26px;
+    transition: .3s;
+}
+
+.technical-card:hover {
+    border-color: var(--purple);
+    transform: translateY(-5px);
+}
+
+.technical-card h3 {
+    color: var(--purple);
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.technical-card h3 i {
+    margin-right: 9px;
+}
+
+.tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tech-list span {
+    padding: 8px 12px;
+    background: #222c46;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #e4e7f1;
+}
+
+/* PROJECTS */
+
+.project-card {
+    padding: 0;
+    overflow: hidden;
+}
+
+.project-image {
+    height: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+    padding: 15px;
+    text-align: center;
+    background: linear-gradient(135deg,#281742,#11253e);
+    border-bottom: 1px solid var(--border);
+}
+
+.project-image i {
+    font-size: 45px;
+    color: var(--purple);
+}
+
+.project-image span {
+    font-size: 13px;
+    color: #d4c9e9;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-content {
+    padding: 25px;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 20px 0;
+}
+
+.project-tags span {
+    background: rgba(167,139,250,.12);
+    border: 1px solid rgba(167,139,250,.15);
+    border-radius: 20px;
+    padding: 5px 11px;
+    color: #ddceff;
+    font-size: 12px;
+}
+
+.small-btn {
+    padding: 10px 16px;
+    border: 1px solid var(--purple);
+    background: transparent;
+    border-radius: 9px;
+    color: var(--purple);
+    font-weight: 700;
+    font-size: 13px;
+    transition: .3s;
+}
+
+.small-btn:hover {
+    background: rgba(167,139,250,.12);
+}
+
+/* PROJECT MODAL */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+    background: rgba(2,5,15,.87);
+    backdrop-filter: blur(8px);
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    width: min(100%,650px);
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative;
+    background: #141d33;
+    border: 1px solid var(--purple);
+    border-radius: 18px;
+    padding: 32px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 13px;
+    right: 19px;
+    border: 0;
+    background: transparent;
+    color: white;
+    font-size: 28px;
+}
+
+.modal-content h2 {
+    color: var(--purple);
+    margin-bottom: 17px;
+    padding-right: 30px;
+}
+
+.modal-content h3 {
+    margin: 18px 0 10px;
+}
+
+.modal-content p {
+    color: var(--muted);
+    margin-bottom: 15px;
+}
+
+.modal-content ul {
+    padding-left: 22px;
+    color: #d7dceb;
+}
+
+.modal-content li {
+    margin-bottom: 9px;
+}
+
+/* CERTIFICATES */
+
+.certificate-year {
+    color: var(--cyan);
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 9px;
+}
+
+.certificate-card .status {
+    margin-top: 19px;
+}
+
+/* PROFESSIONAL SKILLS */
+
+.soft-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+}
+
+.soft-skill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 18px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    border-radius: 11px;
+    font-size: 14px;
+}
+
+.soft-skill i {
+    color: var(--purple);
+}
+
+/* CONTACT */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+}
+
+.contact-intro {
+    color: var(--muted);
+    margin-bottom: 28px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 24px;
+}
+
+.contact-item > i {
+    min-width: 46px;
+    padding: 14px;
+    text-align: center;
+    color: var(--purple);
+    background: rgba(167,139,250,.12);
+    border-radius: 10px;
+}
+
+.contact-item strong {
+    display: block;
+    font-size: 14px;
+}
+
+.contact-item a,
+.contact-item span {
+    color: var(--muted);
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.contact-item a:hover {
+    color: var(--purple);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px 17px;
+    border: 1px solid #2a3550;
+    background: var(--card);
+    border-radius: 10px;
+    color: white;
+    outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--purple);
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    align-self: flex-start;
+}
+
+.form-note {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* FOOTER */
+
+footer {
+    padding: 28px 7%;
+    background: #090e1c;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.footer-brand {
+    color: var(--purple);
+    font-weight: 800;
+}
+
+/* SCROLL ANIMATION */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity .8s, transform .8s;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* BACK TO TOP */
+
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 46px;
+    height: 46px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--purple);
+    color: var(--bg);
+    font-size: 18px;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 900;
+    transition: .3s;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1150px) {
+    .nav-links {
+        gap: 11px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .hero {
+        gap: 35px;
+    }
+
+    .profile-wrapper {
+        width: min(100%,290px);
+    }
+
+    .card-grid,
+    .technical-grid {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+    }
+}
+
+@media (max-width: 900px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 25px;
+        flex-direction: column;
+        gap: 18px;
+        background: #10172a;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 17px 6%;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 45px;
+        padding: 125px 6% 75px;
+    }
+
+    .hero-image-area {
+        grid-row: 1;
+    }
+
+    .profile-wrapper {
+        width: min(68vw,260px);
+    }
+
+    .hero-name {
+        font-size: clamp(30px,6vw,43px);
+        min-height: 2.5em;
+    }
+
+    .hero-role {
+        font-size: clamp(20px,4.3vw,26px);
+    }
+
+    .hero-buttons,
+    .social-links {
+        justify-content: center;
+    }
+
+    .content-section {
+        padding: 75px 6%;
+    }
+
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card-grid,
+    .technical-grid {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 420px) {
+    .about-highlights {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .modal-content {
+        padding: 25px 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+    <a href="#home" class="logo">
+        Tashini<span>.dev</span>
+    </a>
+
+    <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Toggle navigation"
+        aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#academics">Academics</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certificates">Achievements</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+</header>
+
+<main>
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <p class="eyebrow">
+            HELLO, WELCOME!
+        </p>
+
+        <h1 class="hero-name">
+            <span id="nameTyping"></span>
+        </h1>
+
+        <h2 class="hero-role">
+            <span id="studentTyping"></span>
+            <br>
+            <span id="roleTyping"></span>
+        </h2>
+
+        <p class="hero-description">
+            Motivated Software Engineering student with
+            a foundation in programming, object-oriented
+            design, web development and database management.
+            Passionate about learning new technologies,
+            solving problems and building meaningful
+            digital solutions.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#contact" class="btn">
+                Let's Connect
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a
+                href="resume.pdf"
+                class="btn btn-outline"
+                download>
+                Download My CV
+                <i class="fa-solid fa-download"></i>
+            </a>
+
+        </div>
+
+        <!-- UPDATED GITHUB AND LINKEDIN LINKS -->
+
+        <div class="social-links">
+
+            <a
+                href="https://github.com/TashiniUpendra"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub Profile">
+                <i class="fa-brands fa-github"></i>
+            </a>
+
+            <a
+                href="https://www.linkedin.com/in/tashini-upendra-9b52a9345"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn Profile">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+
+            <a
+                href="mailto:tashiniupendra@gmail.com"
+                aria-label="Email">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- PROFILE PHOTO -->
+
+    <div class="hero-image-area">
+
+        <div class="profile-wrapper">
+            <img
+                src="myphoto.jpeg"
+                alt="Tashini Upendra Profile Photo"
+                class="profile-photo">
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SKILLS STRIP -->
+
+<div class="skills-strip">
+
+    <span class="skill-pill">
+        <i class="fa-brands fa-html5"></i> HTML
+    </span>
+
+    <span class="skill-pill">
+        <i class="fa-brands fa-css3-alt"></i> CSS
+    </span>
+
+    <span class="skill-pill">
+        <i class="fa-brands fa-js"></i> JavaScript
+    </span>
+
+    <span class="skill-pill">
+        <i class="fa-brands fa-php"></i> PHP
+    </span>
+
+    <span class="skill-pill">
+        <i class="fa-brands fa-java"></i> Java
+    </span>
+
+    <span class="skill-pill">
+        <i class="fa-solid fa-database"></i> MySQL
+    </span>
+
+    <span class="skill-pill">
+        <i class="fa-solid fa-code"></i> OOP
+    </span>
+
+</div>
+
+<!-- ABOUT -->
+
+<section class="content-section reveal" id="about">
+
+    <div class="section-heading">
+
+        <p class="section-label">Get to know me</p>
+
+        <h2 class="section-title">
+            About <span>Me</span>
+        </h2>
+
+        <div class="section-line"></div>
+
+    </div>
+
+    <div class="about-grid">
+
+        <div class="about-text">
+
+            <p>
+                I'm <strong>Tashini Upendra</strong>,
+                a Software Engineering student at the
+                National Institute of Business Management
+                (NIBM), Sri Lanka.
+            </p>
+
+            <p>
+                I have studied programming, software
+                development, web technologies and database
+                design. My technical knowledge includes
+                HTML, CSS, JavaScript, PHP, MySQL and Java.
+            </p>
+
+            <p>
+                I enjoy learning new technologies,
+                working with others and developing
+                practical solutions. I am interested
+                in gaining industry experience and
+                growing as a software engineering
+                professional.
+            </p>
+
+            <a href="#education" class="btn">
+                My Education
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+        <div class="about-highlights">
+
+            <div class="highlight">
+                <i class="fa-solid fa-code"></i>
+                <h4>Web Development</h4>
+                <p>HTML, CSS and JavaScript</p>
+            </div>
+
+            <div class="highlight">
+                <i class="fa-solid fa-database"></i>
+                <h4>Databases</h4>
+                <p>MySQL and database design</p>
+            </div>
+
+            <div class="highlight">
+                <i class="fa-brands fa-java"></i>
+                <h4>Programming</h4>
+                <p>Java and OOP fundamentals</p>
+            </div>
+
+            <div class="highlight">
+                <i class="fa-solid fa-people-group"></i>
+                <h4>Teamwork</h4>
+                <p>Collaboration and learning</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- EDUCATION TIMELINE -->
+
+<section class="content-section alt-section reveal" id="education">
+
+    <div class="section-heading">
+
+        <p class="section-label">My academic journey</p>
+
+        <h2 class="section-title">
+            Education <span>Timeline</span>
+        </h2>
+
+        <p class="section-description">
+            My academic qualifications and
+            educational background.
+        </p>
+
+        <div class="section-line"></div>
+
+    </div>
+
+    <div class="timeline">
+
+        <!-- HND -->
+
+        <div class="timeline-item">
+
+            <span class="timeline-date">
+                2026 – Present
+            </span>
+
+            <h3>
+                Higher National Diploma in
+                Software Engineering
+            </h3>
+
+            <h4>
+                National Institute of Business
+                Management (NIBM)
+            </h4>
+
+            <p>
+                Currently pursuing a Higher National
+                Diploma in Software Engineering,
+                developing knowledge in programming,
+                software development, databases
+                and software design.
+            </p>
+
+            <span class="status">Ongoing</span>
+
+        </div>
+
+        <!-- DIPLOMA -->
+
+        <div class="timeline-item">
+
+            <span class="timeline-date">
+                2024 – Present
+            </span>
+
+            <h3>
+                Diploma in Software Engineering
+            </h3>
+
+            <h4>
+                National Institute of Business
+                Management (NIBM)
+            </h4>
+
+            <p>
+                Currently pursuing a Diploma in
+                Software Engineering, developing
+                knowledge in programming, software
+                development, and database management.
+            </p>
+
+            <span class="status">Ongoing</span>
+
+        </div>
+
+        <!-- CERTIFICATE -->
+
+        <div class="timeline-item">
+
+            <span class="timeline-date">
+                July 2024 – November 2024
+            </span>
+
+            <h3>
+                Certificate in Software Engineering
+            </h3>
+
+            <h4>
+                National Institute of Business
+                Management (NIBM)
+            </h4>
+
+            <p>
+                Successfully completed the
+                Certificate in Software Engineering.
+            </p>
+
+            <span class="status">Completed</span>
+
+        </div>
+
+        <!-- SITC -->
+
+        <div class="timeline-item">
+
+            <span class="timeline-date">
+                2023
+            </span>
+
+            <h3>
+                Diploma in Information Technology
+            </h3>
+
+            <h4>
+                SITC Campus
+            </h4>
+
+            <p>
+                Successfully completed the
+                Diploma in Information Technology.
+            </p>
+
+            <span class="status">Completed</span>
+
+        </div>
+
+        <!-- ADVANCED LEVEL -->
+
+        <div class="timeline-item">
+
+            <span class="timeline-date">
+                2022
+            </span>
+
+            <h3>
+                G.C.E. Advanced Level — Arts Stream
+            </h3>
+
+            <h4>
+                MR/Thelijjawila Central College
+            </h4>
+
+            <p>
+                Geography — A |
+                Economics — B |
+                Sinhala — B
+            </p>
+
+            <span class="status">Completed</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- TECHNICAL SKILLS -->
+
+<section class="content-section reveal" id="skills">
+
+    <div class="section-heading">
+
+        <p class="section-label">My technical knowledge</p>
+
+        <h2 class="section-title">
+            Technical <span>Skills</span>
+        </h2>
+
+        <p class="section-description">
+            Technologies and concepts from my
+            education and academic development work.
+        </p>
+
+        <div class="section-line"></div>
+
+    </div>
+
+    <div class="technical-grid">
+
+        <div class="technical-card">
+
+            <h3>
+                <i class="fa-solid fa-code"></i>
+                Frontend Development
+            </h3>
+
+            <div class="tech-list">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>Web Design</span>
+            </div>
+
+        </div>
+
+        <div class="technical-card">
+
+            <h3>
+                <i class="fa-solid fa-laptop-code"></i>
+                Programming
+            </h3>
+
+            <div class="tech-list">
+                <span>Java</span>
+                <span>PHP</span>
+                <span>OOP Concepts</span>
+                <span>Software Development</span>
+            </div>
+
+        </div>
+
+        <div class="technical-card">
+
+            <h3>
+                <i class="fa-solid fa-database"></i>
+                Databases
+            </h3>
+
+            <div class="tech-list">
+                <span>MySQL</span>
+                <span>Database Design</span>
+                <span>Database Management</span>
+            </div>
+
+        </div>
+
+        <div class="technical-card">
+
+            <h3>
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+                Development Tools
+            </h3>
+
+            <div class="tech-list">
+                <span>VS Code</span>
+                <span>Android Studio</span>
+                <span>MySQL Workbench</span>
+                <span>Microsoft Office</span>
+            </div>
+
+        </div>
+
+        <div class="technical-card">
+
+            <h3>
+                <i class="fa-solid fa-diagram-project"></i>
+                Software Concepts
+            </h3>
+
+            <div class="tech-list">
+                <span>Object-Oriented Design</span>
+                <span>CRUD Operations</span>
+                <span>Problem Solving</span>
+            </div>
+
+        </div>
+
+        <div class="technical-card">
+
+            <h3>
+                <i class="fa-solid fa-graduation-cap"></i>
+                Additional Project Tools
+            </h3>
+
+            <div class="tech-list">
+                <span>Kotlin</span>
+                <span>Oracle PL/SQL</span>
+                <span>MongoDB</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section class="content-section alt-section reveal" id="services">
+
+    <div class="section-heading">
+
+        <p class="section-label">My areas of interest</p>
+
+        <h2 class="section-title">
+            My <span>Services</span>
+        </h2>
+
+        <p class="section-description">
+            Development areas I am learning
+            and exploring through academic projects.
+        </p>
+
+        <div class="section-line"></div>
+
+    </div>
+
+    <div class="card-grid">
+
+        <article class="card">
+
+            <div class="card-icon">
+                <i class="fa-solid fa-code"></i>
+            </div>
+
+            <h3>Frontend Web Development</h3>
+
+            <p>
+                Creating responsive web interfaces
+                using HTML, CSS and JavaScript.
+            </p>
+
+        </article>
+
+        <article class="card">
+
+            <div class="card-icon">
+                <i class="fa-solid fa-laptop-code"></i>
+            </div>
+
+            <h3>Application Development</h3>
+
+            <p>
+                Developing academic software
+                projects using programming and
+                object-oriented concepts.
+            </p>
+
+        </article>
+
+        <article class="card">
+
+            <div class="card-icon">
+                <i class="fa-solid fa-database"></i>
+            </div>
+
+            <h3>Database Development</h3>
+
+            <p>
+                Exploring relational databases,
+                database design and data management.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+<!-- ACADEMICS -->
+
+<section class="content-section reveal" id="academics">
+
+    <div class="section-heading">
+
+        <p class="section-label">What I have studied</p>
+
+        <h2 class="section-title">
+            Academic & <span>Technical Core</span>
+        </h2>
+
+        <div class="section-line"></div>
+
+    </div>
+
+    <div class="card-grid">
+
+        <article class="card">
+
+            <div class="card-icon">
+                <i class="fa-brands fa-html5"></i>
+            </div>
+
+            <h3>Web Development</h3>
+
+            <p>
+                HTML, CSS, JavaScript
+                and web design fundamentals.
+            </p>
+
+        </article>
+
+        <article class="card">
+
+            <div class="card-icon">
+                <i class="fa-brands fa-java"></i>
+            </div>
+
+            <h3>Object-Oriented Programming</h3>
+
+            <p>
+                Java programming and
+                object-oriented design principles.
+            </p>
+
+        </article>
+
+        <article class="card">
+
+            <div class="card-icon">
+                <i class="fa-solid fa-database"></i>
+            </div>
+
+            <h3>Database Management</h3>
+
+            <p>
+                Database design, SQL concepts
+                and data management.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section class="content-section alt-section reveal" id="projects">
+
+    <div class="section-heading">
+
+        <p class="section-label">
+            Academic development work
+        </p>
+
+        <h2 class="section-title">
+            Featured <span>Projects</span>
+        </h2>
+
+        <p class="section-description">
+            Projects from my software engineering
+            studies. Project screenshots and
+            repository links can be added when ready.
+        </p>
+
+        <div class="section-line"></div>
+
+    </div>
+
+    <div class="card-grid">
+
+        <!-- MUMCARE -->
+
+        <article class="card project-card">
+
+            <div class="project-image">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+                <span>[Add MumCare Screenshot]</span>
+            </div>
+
+            <div class="project-content">
+
+                <h3>MumCare Android Application</h3>
+
+                <p>
+                    An Android application project
+                    focused on maternal and baby care.
+                </p>
+
+                <div class="project-tags">
+                    <span>Kotlin</span>
+                    <span>Android Studio</span>
+                    <span>Mobile UI</span>
+                </div>
+
+                <button
+                    type="button"
+                    class="small-btn"
+                    data-project="mumcare">
+                    View Details
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+        </article>
+
+        <!-- SMARTMOVE -->
+
+        <article class="card project-card">
+
+            <div class="project-image">
+                <i class="fa-solid fa-bus"></i>
+                <span>[Add SmartMove Screenshot]</span>
+            </div>
+
+            <div class="project-content">
+
+                <h3>SmartMove Transport Solutions</h3>
+
+                <p>
+                    A transport management project
+                    involving database and web
+                    application development.
+                </p>
+
+                <div class="project-tags">
+                    <span>Oracle</span>
+                    <span>PL/SQL</span>
+                    <span>MongoDB</span>
+                </div>
+
+                <button
+                    type="button"
+                    class="small-btn"
+                    data-project="smartmove">
+                    View Details
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+        </article>
+
+        <!-- JOURNAL APP -->
+
+        <article class="card project-card">
+
+            <div class="project-image">
+                <i class="fa-solid fa-book-open"></i>
+                <span>[Add Journal App Screenshot]</span>
+            </div>
+
+            <div class="project-content">
+
+                <h3>Personal Journal Web App</h3>
+
+                <p>
+                    A PHP and MySQL journal
+                    application project with
+                    journal entries and personal goals.
+                </p>
+
+                <div class="project-tags">
+                    <span>PHP</span>
+                    <span>MySQL</span>
+                    <span>HTML & CSS</span>
+                </div>
+
+                <button
+                    type="button"
+                    class="small-btn"
+                    data-project="journal">
+                    View Details
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+<!-- CERTIFICATES AND ACHIEVEMENTS -->
+
+<section class="content-section reveal" id="certificates">
+
+    <div class="section-heading">
+
+        <p class="section-label">
+            Courses and recognition
+        </p>
+
+        <h2 class="section-title">
+            Certificates & <span>Achievements</span>
+        </h2>
+
+        <p class="section-description">
+            Courses completed and recognition
+            received during my learning journey.
+        </p>
+
+        <div class="section-line"></div>
+
+    </div>
+
+    <div class="card-grid">
+
+        <article class="card certificate-card">
+
+            <div class="card-icon">
+                <i class="fa-solid fa-laptop-code"></i>
+            </div>
+
+            <p class="certificate-year">
+                [Add Completion Date]
+            </p>
+
+            <h3>Web Design for Beginners</h3>
+
+            <p>
+                University of Moratuwa
+            </p>
+
+            <span class="status">Completed</span>
+
+        </article>
+
+        <article class="card certificate-card">
+
+            <div class="card-icon">
+                <i class="fa-solid fa-brain"></i>
+            </div>
+
+            <p class="certificate-year">
+                May 26, 2026
+            </p>
+
+            <h3>AI Skills for Students</h3>
+
+            <p>
+                Canva Design School
+                <br>
+                1 hour and 30 minutes of training
+            </p>
+
+            <span class="status">Completed</span>
+
+        </article>
+
+        <article class="card certificate-card">
+
+            <div class="card-icon">
+                <i class="fa-solid fa-award"></i>
+            </div>
+
+            <p class="certificate-year">
+                2025
+            </p>
+
+            <h3>TechWaves 2025 Exhibition</h3>
+
+            <p>
+                Letter of Appreciation — NIBM.
+                Recognized for contribution,
+                teamwork and professional conduct.
+            </p>
+
+            <span class="status">Recognition</span>
+
+        </article>
+
+    </div>
+
+</section>
+
+<!-- PROFESSIONAL SKILLS -->
+
+<section class="content-section alt-section reveal" id="soft-skills">
+
+    <div class="section-heading">
+
+        <p class="section-label">
+            Personal strengths
+        </p>
+
+        <h2 class="section-title">
+            Professional <span>Skills</span>
+        </h2>
+
+        <div class="section-line"></div>
+
+    </div>
+
+    <div class="soft-skills">
+
+        <div class="soft-skill">
+            <i class="fa-solid fa-lightbulb"></i>
+            Problem Solving
+        </div>
+
+        <div class="soft-skill">
+            <i class="fa-solid fa-chart-line"></i>
+            Analytical Thinking
+        </div>
+
+        <div class="soft-skill">
+            <i class="fa-solid fa-people-group"></i>
+            Teamwork
+        </div>
+
+        <div class="soft-skill">
+            <i class="fa-solid fa-handshake"></i>
+            Collaboration
+        </div>
+
+        <div class="soft-skill">
+            <i class="fa-solid fa-clock"></i>
+            Time Management
+        </div>
+
+        <div class="soft-skill">
+            <i class="fa-solid fa-book-open-reader"></i>
+            Quick Learning
+        </div>
+
+        <div class="soft-skill">
+            <i class="fa-solid fa-list-check"></i>
+            Organization
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="content-section reveal" id="contact">
+
+    <div class="section-heading">
+
+        <p class="section-label">Let's connect</p>
+
+        <h2 class="section-title">
+            Get In <span>Touch</span>
+        </h2>
+
+        <p class="section-description">
+            Interested in discussing learning
+            opportunities, internships or
+            software development projects?
+            Feel free to reach out.
+        </p>
+
+        <div class="section-line"></div>
+
+    </div>
+
+    <div class="contact-grid">
+
+        <div>
+
+            <p class="contact-intro">
+                I am interested in gaining
+                practical industry experience,
+                contributing to team projects
+                and learning from new opportunities.
+            </p>
+
+            <div class="contact-item">
+
+                <i class="fa-solid fa-envelope"></i>
+
+                <div>
+                    <strong>Email</strong>
+
+                    <a href="mailto:tashiniupendra@gmail.com">
+                        tashiniupendra@gmail.com
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- UPDATED LINKEDIN -->
+
+            <div class="contact-item">
+
+                <i class="fa-brands fa-linkedin-in"></i>
+
+                <div>
+                    <strong>LinkedIn</strong>
+
+                    <a
+                        href="https://www.linkedin.com/in/tashini-upendra-9b52a9345"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Tashini Upendra
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- UPDATED GITHUB -->
+
+            <div class="contact-item">
+
+                <i class="fa-brands fa-github"></i>
+
+                <div>
+                    <strong>GitHub</strong>
+
+                    <a
+                        href="https://github.com/TashiniUpendra"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        github.com/TashiniUpendra
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="contact-item">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                <div>
+                    <strong>Location</strong>
+                    <span>Sri Lanka</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <form class="contact-form" id="contactForm">
+
+            <input
+                type="text"
+                id="contactName"
+                placeholder="Your Name"
+                aria-label="Your Name"
+                required>
+
+            <input
+                type="email"
+                id="contactEmail"
+                placeholder="Your Email"
+                aria-label="Your Email"
+                required>
+
+            <textarea
+                id="contactMessage"
+                rows="6"
+                placeholder="Your Message"
+                aria-label="Your Message"
+                required></textarea>
+
+            <button type="submit" class="btn">
+                Send Message
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
+
+            <p class="form-note">
+                This form opens your email application
+                to send the message.
+            </p>
+
+        </form>
+
+    </div>
+
+</section>
+
+</main>
+
+<!-- PROJECT DETAILS MODAL -->
+
+<div
+    class="modal"
+    id="projectModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modalTitle"
+    aria-hidden="true">
+
+    <div class="modal-content">
+
+        <button
+            type="button"
+            class="modal-close"
+            id="modalClose"
+            aria-label="Close project details">
+            &times;
+        </button>
+
+        <h2 id="modalTitle"></h2>
+
+        <div id="modalBody"></div>
+
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        &copy; 2026 Tashini Upendra.
+        All rights reserved.
+    </p>
+
+    <p>
+        Designed with
+        <span class="footer-brand">Tashini.dev</span>
+    </p>
+
+</footer>
+
+<!-- BACK TO TOP -->
+
+<button
+    type="button"
+    class="back-to-top"
+    id="backToTop"
+    aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<script>
+
+/* MOBILE NAVIGATION */
+
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+    const open = navLinks.classList.toggle("open");
+
+    menuToggle.setAttribute(
+        "aria-expanded",
+        String(open)
+    );
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+    });
+});
+
+/* CURSOR-FREE TYPING ANIMATION */
+
+const nameTyping = document.getElementById("nameTyping");
+const studentTyping = document.getElementById("studentTyping");
+const roleTyping = document.getElementById("roleTyping");
+
+const nameText = "I'm Tashini Upendra";
+const studentText = "Software Engineering Student &";
+
+const roles = [
+    "Web Developer",
+    "Software Development Enthusiast",
+    "Frontend Developer"
+];
+
+const sleep = ms =>
+    new Promise(resolve => setTimeout(resolve, ms));
+
+async function typeText(element, text, speed) {
+    element.textContent = "";
+
+    for (const char of text) {
+        element.textContent += char;
+        await sleep(speed);
+    }
+}
+
+async function deleteText(element, speed) {
+    while (element.textContent.length > 0) {
+        element.textContent =
+            element.textContent.slice(0, -1);
+
+        await sleep(speed);
+    }
+}
+
+async function startTyping() {
+
+    const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (reducedMotion) {
+        nameTyping.textContent = nameText;
+        studentTyping.textContent = studentText;
+        roleTyping.textContent = roles[0];
+        return;
+    }
+
+    await typeText(nameTyping, nameText, 85);
+    await sleep(450);
+
+    await typeText(studentTyping, studentText, 60);
+    await sleep(400);
+
+    let index = 0;
+
+    while (true) {
+
+        await typeText(roleTyping, roles[index], 90);
+        await sleep(1700);
+
+        await deleteText(roleTyping, 45);
+        await sleep(300);
+
+        index = (index + 1) % roles.length;
+    }
+}
+
+startTyping();
+
+/* PROJECT DETAILS DATA */
+
+const projectDetails = {
+
+    mumcare: {
+        title: "MumCare Android Application",
+
+        description:
+            "MumCare is an Android application project focused on maternal and baby care. It is being developed as part of software engineering studies.",
+
+        technologies: [
+            "Kotlin",
+            "Android Studio",
+            "Android UI Development"
+        ],
+
+        features: [
+            "Mobile application interface design",
+            "Maternal and baby care related screens",
+            "Team-based application development",
+            "[Add verified completed features]"
+        ]
+    },
+
+    smartmove: {
+        title: "SmartMove Transport Solutions",
+
+        description:
+            "SmartMove is an academic transport management project involving relational database design, PL/SQL, MongoDB and web application components.",
+
+        technologies: [
+            "Oracle Database",
+            "PL/SQL",
+            "MongoDB",
+            "Web Technologies"
+        ],
+
+        features: [
+            "Passenger, vehicle and driver data structures",
+            "Routes, trips and ticket data management",
+            "Database procedures and queries",
+            "Transport management application design"
+        ]
+    },
+
+    journal: {
+        title: "Personal Journal Web Application",
+
+        description:
+            "A PHP and MySQL web application project for managing journal entries and personal goals.",
+
+        technologies: [
+            "PHP",
+            "MySQL",
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+
+        features: [
+            "Login and session management",
+            "Create and manage journal entries",
+            "Mood selection",
+            "Personal goals management",
+            "Dashboard interface"
+        ]
+    }
+};
+
+/* PROJECT DETAILS MODAL */
+
+const modal = document.getElementById("projectModal");
+const modalTitle = document.getElementById("modalTitle");
+const modalBody = document.getElementById("modalBody");
+const modalClose = document.getElementById("modalClose");
+
+let previousFocus = null;
+
+function createList(items) {
+
+    const ul = document.createElement("ul");
+
+    items.forEach(item => {
+
+        const li = document.createElement("li");
+
+        li.textContent = item;
+        ul.appendChild(li);
+
+    });
+
+    return ul;
+}
+
+function openProject(projectId) {
+
+    const project = projectDetails[projectId];
+
+    if (!project) return;
+
+    previousFocus = document.activeElement;
+
+    modalTitle.textContent = project.title;
+    modalBody.replaceChildren();
+
+    const description = document.createElement("p");
+    description.textContent = project.description;
+
+    const techTitle = document.createElement("h3");
+    techTitle.textContent = "Technologies Used";
+
+    const featuresTitle = document.createElement("h3");
+    featuresTitle.textContent = "Project Features";
+
+    modalBody.appendChild(description);
+    modalBody.appendChild(techTitle);
+    modalBody.appendChild(createList(project.technologies));
+    modalBody.appendChild(featuresTitle);
+    modalBody.appendChild(createList(project.features));
+
+    modal.classList.add("show");
+    modal.setAttribute("aria-hidden", "false");
+
+    document.body.style.overflow = "hidden";
+
+    modalClose.focus();
+}
+
+function closeProject() {
+
+    modal.classList.remove("show");
+    modal.setAttribute("aria-hidden", "true");
+
+    document.body.style.overflow = "";
+
+    if (previousFocus) {
+        previousFocus.focus();
+    }
+}
+
+document.querySelectorAll("[data-project]").forEach(button => {
+
+    button.addEventListener("click", () => {
+        openProject(button.dataset.project);
+    });
+
+});
+
+modalClose.addEventListener("click", closeProject);
+
+modal.addEventListener("click", event => {
+
+    if (event.target === modal) {
+        closeProject();
+    }
+
+});
+
+document.addEventListener("keydown", event => {
+
+    if (!modal.classList.contains("show")) return;
+
+    if (event.key === "Escape") {
+        closeProject();
+        return;
+    }
+
+    if (event.key === "Tab") {
+
+        const focusable = modal.querySelectorAll(
+            "button, a[href], input, textarea"
+        );
+
+        if (!focusable.length) return;
+
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        if (
+            event.shiftKey &&
+            document.activeElement === first
+        ) {
+            event.preventDefault();
+            last.focus();
+        } else if (
+            !event.shiftKey &&
+            document.activeElement === last
+        ) {
+            event.preventDefault();
+            first.focus();
+        }
+    }
+});
+
+/* SCROLL REVEAL */
+
+const revealElements = document.querySelectorAll(".reveal");
+
+if ("IntersectionObserver" in window) {
+
+    const revealObserver = new IntersectionObserver(entries => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                revealObserver.unobserve(entry.target);
+            }
+
+        });
+
+    }, {
+        threshold: 0.08
+    });
+
+    revealElements.forEach(element => {
+        revealObserver.observe(element);
+    });
+
+} else {
+
+    revealElements.forEach(element => {
+        element.classList.add("visible");
+    });
+
+}
+
+/* ACTIVE NAVIGATION */
+
+const sections = document.querySelectorAll("section[id]");
+
+const navigationLinks =
+    document.querySelectorAll(".nav-links a");
+
+if ("IntersectionObserver" in window) {
+
+    const sectionObserver = new IntersectionObserver(entries => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                navigationLinks.forEach(link => {
+
+                    link.classList.toggle(
+                        "active",
+                        link.getAttribute("href") ===
+                        "#" + entry.target.id
+                    );
+
+                });
+
+            }
+
+        });
+
+    }, {
+        rootMargin: "-25% 0px -60% 0px"
+    });
+
+    sections.forEach(section => {
+        sectionObserver.observe(section);
+    });
+
+}
+
+/* BACK TO TOP */
+
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+
+    backToTop.classList.toggle(
+        "show",
+        window.scrollY > 350
+    );
+
+});
+
+backToTop.addEventListener("click", () => {
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+});
+
+/* CONTACT FORM */
+
+document.getElementById("contactForm")
+    .addEventListener("submit", event => {
+
+        event.preventDefault();
+
+        const name = document
+            .getElementById("contactName")
+            .value.trim();
+
+        const email = document
+            .getElementById("contactEmail")
+            .value.trim();
+
+        const message = document
+            .getElementById("contactMessage")
+            .value.trim();
+
+        const subject = encodeURIComponent(
+            "Portfolio Inquiry from " + name
+        );
+
+        const body = encodeURIComponent(
+            "Name: " + name +
+            "\nEmail: " + email +
+            "\n\nMessage:\n" + message
+        );
+
+        window.location.href =
+            "mailto:tashiniupendra@gmail.com" +
+            "?subject=" + subject +
+            "&body=" + body;
+
+    });
+
+</script>
+
+</body>
+</html>
